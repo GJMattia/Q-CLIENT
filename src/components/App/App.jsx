@@ -7,7 +7,7 @@ import Profile from '../Profile/Profile'
 import Sauce from '../Sauce/Sauce'
 import './App.css'
 
-function App() {
+export default function App() {
   const [user, setUser] = useState(getUser())
 
   return (
@@ -26,4 +26,4 @@ function App() {
   )
 }
 
-export default App
+

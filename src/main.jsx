@@ -5,7 +5,7 @@ import App from './components/App/App'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <Router>
+  <Router basename='https://q-client.onrender.com'>
     <React.StrictMode>
       <App />
     </React.StrictMode>
