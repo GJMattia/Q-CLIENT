@@ -1,0 +1,100 @@
+.Home {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    background-color: dodgerblue;
+}
+
+.SplitBox {
+    margin-top: 3rem;
+    width: 70%;
+    height: 18rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 4rem;
+}
+
+.BoxOne {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    width: 40%;
+    color: white;
+    border: 1px solid white;
+
+}
+
+.BoxTwo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    width: 40%;
+    background-color: white;
+    border-radius: .2rem;
+}
+
+.SignInOptions {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-top: .5rem;
+}
+
+.SignInOptions>button {
+    cursor: pointer;
+    border: 0;
+    padding: .5rem;
+    width: 48%;
+    color: white;
+    font-weight: 900;
+    border-radius: .3rem;
+}
+
+.SignInOptions>button:nth-child(1) {
+    background-color: rgb(46, 181, 46);
+}
+
+.SignInOptions>button:nth-child(2) {
+    background-color: rgb(51, 75, 184)
+}
+
+
+.SignUpForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+}
+
+.SignUpForm>input {
+    font-weight: 900;
+    width: 88%;
+    height: 2rem;
+    border-radius: .2rem;
+    border: 1px solid lightgray;
+    text-align: center;
+}
+
+.CreateAccountBtn {
+    border-radius: .2rem;
+    color: white;
+    font-weight: 900;
+    background-color: dodgerblue;
+    border: 0;
+    padding: .5rem;
+    width: 90%;
+    cursor: pointer;
+}
+
+.CreateAccountBtn:hover {
+    background-color: darkblue;
+}
