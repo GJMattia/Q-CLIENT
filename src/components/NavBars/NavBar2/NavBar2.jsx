@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
-import * as userService from '../../../utilities/user-services'
+import * as userService from '../../../../utilities/user-services';
 
-export default function NavBar({ user, setUser }) {
+export default function NavBarTwo({ user, setUser }) {
   function handleLogOut() {
     userService.logOut()
     setUser(null)

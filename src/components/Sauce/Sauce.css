@@ -1,0 +1,64 @@
+.Wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 5rem;
+    width: 15rem;
+    height: 15rem;
+
+    background: repeating-conic-gradient(from var(--a),
+            black 0%,
+            gray 5%,
+            transparent 5%,
+            transparent 40%,
+            yellow 50%);
+    animation: rotate 4s linear infinite;
+}
+
+@property --a {
+    syntax: " <angle> ";
+    inherits: false;
+    initial-value: 0deg;
+}
+
+@keyframes rotate {
+    0% {
+        --a: 0deg;
+    }
+
+    100% {
+        --a: 360deg;
+    }
+}
+
+.Wrapper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-conic-gradient(from var(--a),
+            lightblue 0%,
+            darkblue 5%,
+            /* Fix: Added percentage value */
+            transparent 5%,
+            transparent 40%,
+            dodgerblue 50%);
+    /* Fix: Added percentage value */
+    animation: rotate 4s linear infinite -1s;
+    border-radius: .2rem;
+}
+
+.Wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: white;
+    margin: .1rem;
+    border-radius: .2rem;
+
+}
+
+.Wrapper>p {
+    background-color: yellow;
+    z-index: 1;
+}

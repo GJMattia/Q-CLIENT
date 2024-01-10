@@ -1,0 +1,31 @@
+footer {
+    position: absolute;
+    user-select: none;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    border-top: 1px solid gray;
+}
+
+.footer-logo {
+    width: 2rem;
+    height: 2rem;
+}
+
+footer>ul {
+    list-style: none;
+    display: flex;
+}
+
+footer>ul>li {
+    color: darkgray;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+footer>ul>li>a {
+    color: dodgerblue;
+    text-decoration: none;
+}

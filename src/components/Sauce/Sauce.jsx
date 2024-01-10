@@ -1,6 +1,9 @@
+import './Sauce.css';
+
 export default function Sauce() {
     return (
-        <h3>saucesaucesaucesaucesaucesaucesaucesaucesaucesaucesaucesaucesaucesaucesaucesaucesaucesaucesaucesaucesaucesaucesaucesauce
-        </h3>
+        <div className='Wrapper'>
+            <p>The dog ha ha ha </p>
+        </div>
     )
 }
