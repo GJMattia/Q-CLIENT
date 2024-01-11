@@ -1,6 +1,7 @@
 import './Home.css';
 import { useState } from 'react';
 import { signUp } from '../../../utilities/user-api';
+import BlueSpikes from '../../assets/pictures/BlueSpikes.png';
 
 
 
@@ -38,11 +39,14 @@ export default function Home({ setUser }) {
 
     return (
         <div className='Home'>
+            <img className='BlueSpikes' src={BlueSpikes} />
             <div className='SplitBox'>
 
                 <div className='BoxOne'>
-                    <h1>Test your brain power and earn badges</h1>
-                    <h4>Take quiz's with 15 different categories, and over 10k different questions!</h4>
+                    <h1>Unleash Your Wisdom</h1>
+                    <p>Empowering minds through diverse quizzes, tracking achievements, and earning
+                        XP – embark on a journey of knowledge and fun. Uncover your potential, one question at a time.</p>
+                    <button>Play Now!</button>
                 </div>
 
 
@@ -54,18 +58,19 @@ export default function Home({ setUser }) {
                         <button>Sign in with Facebook</button>
                     </div>
                     <form className='SignUpForm' autoComplete="off" onSubmit={handleSubmit}>
+                        <label className='UserIcon'>👤</label>
                         <input placeholder='Username' type="text" name="name" value={formData.name} onChange={handleChange} required />
+                        <label className='EmailIcon'>📧</label>
                         <input placeholder='Email Address' type="email" name="email" value={formData.email} onChange={handleChange} required />
+                        <label className='PWIcon1'>🔒</label>
                         <input placeholder='Password' type="password" name="password" value={formData.password} onChange={handleChange} required />
+                        <label className='PWIcon2'>🔒</label>
                         <input placeholder='Confirm Password' type="password" name="confirm" value={formData.confirm} onChange={handleChange} required />
                         <button className='CreateAccountBtn' type="submit" disabled={disable}>
                             Create My Account
                         </button>
                     </form>
                 </div>
-
-
-
             </div>
             <p className="error-message">&nbsp;{formData.error}</p>
         </div>

@@ -27,7 +27,7 @@ export default function App() {
         <>
           <NavBar1 />
           <Home setUser={setUser} />
-          <AuthPage setUser={setUser} />
+          {/* <AuthPage setUser={setUser} /> */}
           <Footer />
         </>
       }
