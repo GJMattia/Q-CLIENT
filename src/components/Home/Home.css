@@ -11,10 +11,9 @@
 .BlueSpikes {
     height: 10rem;
     z-index: -1;
-    top: 28rem;
+    top: 25rem;
     width: 100%;
     position: absolute;
-    image-rendering: pixelated;
 }
 
 .SplitBox {
@@ -39,7 +38,7 @@
 
 .BoxOne>h1 {
     margin: 0;
-    font-size: 3rem;
+    font-size: 2.8rem;
 }
 
 .BoxOne>p {
@@ -47,6 +46,7 @@
     bottom: 1rem;
     font-style: italic;
     width: 95%;
+    line-height: 1.5;
 }
 
 .BoxOne>button {

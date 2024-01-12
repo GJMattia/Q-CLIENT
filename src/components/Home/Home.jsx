@@ -48,11 +48,7 @@ export default function Home({ setUser }) {
                         XP – embark on a journey of knowledge and fun. Uncover your potential, one question at a time.</p>
                     <button>Play Now!</button>
                 </div>
-
-
-
                 <div className='BoxTwo'>
-
                     <div className='SignInOptions'>
                         <button>Sign in with Google</button>
                         <button>Sign in with Facebook</button>
@@ -72,7 +68,6 @@ export default function Home({ setUser }) {
                     </form>
                 </div>
             </div>
-            <p className="error-message">&nbsp;{formData.error}</p>
         </div>
     )
 }

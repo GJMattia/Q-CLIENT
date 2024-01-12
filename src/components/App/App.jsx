@@ -9,6 +9,7 @@ import Sauce from '../Sauce/Sauce';
 import './App.css';
 import Footer from '../Footer/Footer';
 import Home from '../Home/Home';
+import HomeGraphics from '../HomeGraphics/HomeGraphics';
 
 export default function App() {
   const [user, setUser] = useState(getUser())
@@ -27,6 +28,7 @@ export default function App() {
         <>
           <NavBar1 />
           <Home setUser={setUser} />
+          <HomeGraphics />
           {/* <AuthPage setUser={setUser} /> */}
           <Footer />
         </>
