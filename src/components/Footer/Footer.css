@@ -4,27 +4,39 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 80%;
+    width: 85%;
     border-top: 1px solid gray;
-}
-
-.footer-logo {
-    width: 2rem;
-    height: 2rem;
 }
 
 footer>ul {
     list-style: none;
     display: flex;
+    padding: 0;
 }
 
 footer>ul>li {
     color: darkgray;
     margin-left: 2rem;
     margin-right: 2rem;
+    text-align: center;
 }
 
 footer>ul>li>a {
     color: dodgerblue;
     text-decoration: none;
+}
+
+
+@media (max-width: 1000px) {
+
+
+    footer {
+        width: 100%;
+    }
+
+    footer>ul>li {
+        color: darkgray;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
 }

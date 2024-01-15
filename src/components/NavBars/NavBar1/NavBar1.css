@@ -42,3 +42,25 @@
     background-color: white;
 
 }
+
+
+@media (max-width: 1000px) {
+
+    .NavBar1 {
+        height: 10.5rem;
+        flex-direction: column;
+        border-bottom: 1px solid azure;
+    }
+
+    .WebsiteTitle {
+        margin: 0rem;
+        font-size: 4rem;
+    }
+
+    .Btn-Log-Container {
+        margin-bottom: 1rem;
+    }
+
+
+
+}

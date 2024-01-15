@@ -17,4 +17,4 @@ export default function NavBar1() {
 
         </div>
     )
-}
+};

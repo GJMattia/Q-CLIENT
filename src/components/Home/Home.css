@@ -11,7 +11,7 @@
 .BlueSpikes {
     height: 10rem;
     z-index: -1;
-    top: 25rem;
+    bottom: -9.9rem;
     width: 100%;
     position: absolute;
 }
@@ -166,4 +166,44 @@
 
 .CreateAccountBtn:hover {
     background-color: rgb(0, 4, 106);
+}
+
+
+@media (max-width: 1000px) {
+
+
+    .Home {}
+
+    .SplitBox {
+        width: 95%;
+        align-items: center;
+        flex-direction: column;
+        height: auto;
+        margin: 1rem;
+    }
+
+    .BoxOne {
+        width: 100%;
+    }
+
+    .BoxOne>h1 {
+        width: 100%;
+        margin: 1rem;
+        font-size: 2rem;
+    }
+
+    .BoxOne>p {
+        width: 95%;
+        line-height: 1.5;
+        font-size: .8rem;
+    }
+
+    .BoxOne>button {
+        padding: .5rem;
+    }
+
+    .BoxTwo {
+        display: none;
+    }
+
 }

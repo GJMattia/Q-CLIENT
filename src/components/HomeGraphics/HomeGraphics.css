@@ -8,7 +8,7 @@
     justify-content: space-evenly;
     align-items: center;
     width: 85%;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .InfoContainer {
@@ -43,4 +43,39 @@
 
 .PenguinSlot {
     width: 29rem;
+}
+
+@media (max-width: 1000px) {
+
+    .HomeGraphics {
+        padding: 0;
+        width: 95%;
+    }
+
+    .TopGraphic {
+        margin-top: 10rem;
+    }
+
+
+    .InfoContainer>h1 {
+        margin-bottom: .7rem;
+        font-size: 2rem;
+    }
+
+    .InfoContainer>p {
+        width: 75%;
+    }
+
+    .PenguinSlot {
+        width: 12rem;
+    }
+
+    .PenguinBooks {
+        width: 12rem;
+    }
+
+    .PenguinTrophy {
+        width: 12rem;
+    }
+
 }
