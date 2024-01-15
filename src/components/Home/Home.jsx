@@ -7,6 +7,8 @@ import BlueSpikes from '../../assets/pictures/BlueSpikes.png';
 
 export default function Home({ setUser }) {
 
+
+
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -50,8 +52,8 @@ export default function Home({ setUser }) {
                 </div>
                 <div className='BoxTwo'>
                     <div className='SignInOptions'>
-                        <button>Sign in with Google</button>
-                        <button>Sign in with Facebook</button>
+                        <button >Sign in with Google</button>
+                        <button >Sign in with Facebook</button>
                     </div>
                     <form className='SignUpForm' autoComplete="off" onSubmit={handleSubmit}>
                         <label className='UserIcon'>👤</label>

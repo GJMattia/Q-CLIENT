@@ -10,9 +10,12 @@ import './App.css';
 import Footer from '../Footer/Footer';
 import Home from '../Home/Home';
 import HomeGraphics from '../HomeGraphics/HomeGraphics';
+import Log from '../Log/Log';
 
 export default function App() {
-  const [user, setUser] = useState(getUser())
+  const [user, setUser] = useState(getUser());
+
+  const [log, setLog] = useState(false);
 
   return (
     <div className='App'>
@@ -26,9 +29,11 @@ export default function App() {
           </Routes>
         </> :
         <>
-          <NavBar1 />
+          <NavBar1 log={log} setLog={setLog} />
+
           <Home setUser={setUser} />
           <HomeGraphics />
+          {log && <Log log={log} setLog={setLog} />}
           {/* <AuthPage setUser={setUser} /> */}
           <Footer />
         </>
@@ -36,5 +41,6 @@ export default function App() {
     </div>
   )
 }
+
 
 
