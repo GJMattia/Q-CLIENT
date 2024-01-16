@@ -1,7 +1,13 @@
 import { useState } from 'react'
 import * as usersService from '../../../../utilities/user-services'
+import './LoginForm.css';
 
-export default function LoginForm({ setUser }) {
+export default function LoginForm({ setUser, log, setLog }) {
+
+  function toggleLog() {
+    setLog(!log);
+  };
+
   const [credentials, setCredentials] = useState({
     email: '',
     password: ''
@@ -18,24 +24,23 @@ export default function LoginForm({ setUser }) {
     evt.preventDefault()
     try {
       const user = await usersService.login(credentials)
-      setUser(user)
+      setUser(user);
+      toggleLog();
     } catch {
       setError('Log In Failed - Try Again')
     }
   }
 
   return (
-    <div>
-      <div className="form-container">
-        <form autoComplete="off" onSubmit={handleSubmit}>
-          <label>Email</label>
-          <input type="text" name="email" value={credentials.email} onChange={handleChange} required />
-          <label>Password</label>
-          <input type="password" name="password" value={credentials.password} onChange={handleChange} required />
-          <button type="submit">LOG IN</button>
-        </form>
-      </div>
+    <>
+      <form className='LoginForm' autoComplete="off" onSubmit={handleSubmit}>
+        <label className='LoginEmail'>📧</label>
+        <input placeholder='Your email address' type="text" name="email" value={credentials.email} onChange={handleChange} required />
+        <label className='LoginPW'>🔒</label>
+        <input placeholder='Your password' type="password" name="password" value={credentials.password} onChange={handleChange} required />
+        <button className='LoginBtn' type="submit">Sign In</button>
+      </form>
       <p className="error-message">&nbsp;{error}</p>
-    </div>
+    </>
   )
 }

@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { getUser } from '../../../utilities/user-services';
-import AuthPage from '../Auth/AuthPage/AuthPage';
 import NavBar1 from '../NavBars/NavBar1/NavBar1';
 import NavBar2 from '../NavBars/NavBar2/NavBar2';
 import Profile from '../Profile/Profile';
@@ -33,8 +32,7 @@ export default function App() {
 
           <Home setUser={setUser} />
           <HomeGraphics />
-          {log && <Log log={log} setLog={setLog} />}
-          {/* <AuthPage setUser={setUser} /> */}
+          {log && <Log log={log} setLog={setLog} setUser={setUser} />}
           <Footer />
         </>
       }
