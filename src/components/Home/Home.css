@@ -121,23 +121,23 @@
 }
 
 .UserIcon {
-    left: 8%;
+    left: 9%;
     top: 6%;
 }
 
 .EmailIcon {
-    left: 8%;
+    left: 9%;
     top: 26%;
 }
 
 .PWIcon1 {
-    left: 8%;
+    left: 9%;
     top: 45%;
     filter: saturate(0%);
 }
 
 .PWIcon2 {
-    left: 8%;
+    left: 9%;
     top: 64%;
     filter: saturate(200%);
 }

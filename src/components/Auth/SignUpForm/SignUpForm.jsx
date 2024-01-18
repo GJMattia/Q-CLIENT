@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { signUp } from '../../../../utilities/user-services';
+import './SignUpForm.css';
 
-const SignUpForm = ({ setUser }) => {
+export default function SignUpForm({ setUser }) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -33,25 +34,22 @@ const SignUpForm = ({ setUser }) => {
   const disable = formData.password !== formData.confirm;
 
   return (
-    <div>
-      <div className="form-container">
-        <form autoComplete="off" onSubmit={handleSubmit}>
-          <label>Name</label>
-          <input type="text" name="name" value={formData.name} onChange={handleChange} required />
-          <label>Email</label>
-          <input type="email" name="email" value={formData.email} onChange={handleChange} required />
-          <label>Password</label>
-          <input type="password" name="password" value={formData.password} onChange={handleChange} required />
-          <label>Confirm</label>
-          <input type="password" name="confirm" value={formData.confirm} onChange={handleChange} required />
-          <button type="submit" disabled={disable}>
-            SIGN UP
-          </button>
-        </form>
-      </div>
+    <>
+      <form className='SignUpForm' autoComplete="off" onSubmit={handleSubmit}>
+        <label className='CreateUser'>👤</label>
+        <input placeholder='Pick a Username' type="text" name="name" value={formData.name} onChange={handleChange} required />
+        <label className='CreateEmail'>📧</label>
+        <input placeholder='Your email address' type="email" name="email" value={formData.email} onChange={handleChange} required />
+        <label className='CreatePW1'>🔒</label>
+        <input placeholder='Create a password' type="password" name="password" value={formData.password} onChange={handleChange} required />
+        <label className='CreatePW2'>🔒</label>
+        <input placeholder='Confirm your password' type="password" name="confirm" value={formData.confirm} onChange={handleChange} required />
+        <button className='SignUpBtn' type="submit" disabled={disable}>
+          Create My Account
+        </button>
+      </form>
       <p className="error-message">&nbsp;{formData.error}</p>
-    </div>
+    </>
   );
 };
 
-export default SignUpForm;

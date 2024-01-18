@@ -12,9 +12,11 @@ import HomeGraphics from '../HomeGraphics/HomeGraphics';
 import Log from '../Log/Log';
 
 export default function App() {
-  const [user, setUser] = useState(getUser());
 
+  const [user, setUser] = useState(getUser());
   const [log, setLog] = useState(false);
+  const [logType, setLogType] = useState(0);
+
 
   return (
     <div className='App'>
@@ -28,11 +30,8 @@ export default function App() {
           </Routes>
         </> :
         <>
-          <NavBar1 log={log} setLog={setLog} />
-
-          <Home setUser={setUser} />
-          <HomeGraphics />
-          {log && <Log log={log} setLog={setLog} setUser={setUser} />}
+          <NavBar1 log={log} setLog={setLog} setLogType={setLogType} />
+          <Home setUser={setUser} log={log} setLog={setLog} logType={logType} setLogType={setLogType} />
           <Footer />
         </>
       }

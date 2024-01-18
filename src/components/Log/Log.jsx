@@ -1,11 +1,20 @@
 import './Log.css';
 import LoginForm from '../Auth/LoginForm/LoginForm';
+import SignUpForm from '../Auth/SignUpForm/SignUpForm';
 
-export default function Log({ log, setLog, setUser }) {
+export default function Log({ logType, setLogType, log, setLog, setUser }) {
 
     function toggleLog() {
         setLog(!log);
     };
+
+    function toggleSignIn() {
+        setLogType(0)
+    }
+
+    function toggleCreate() {
+        setLogType(1)
+    }
 
 
     return (
@@ -14,15 +23,22 @@ export default function Log({ log, setLog, setUser }) {
                 <button className='X' onClick={toggleLog}>X</button>
 
                 <div className='LogButtons'>
-                    <button>Sign In</button>
-                    <button>Register</button>
+                    <button onClick={toggleSignIn}>Sign In</button>
+                    <button onClick={toggleCreate}>Register</button>
                 </div>
 
                 <div className='LogOptions'>
 
+
                     <div className='Manual'>
-                        <LoginForm log={log} setLog={setLog} setUser={setUser} />
+                        {logType === 0 ? (
+                            <LoginForm log={log} setLog={setLog} setUser={setUser} />
+                        ) : (
+                            <SignUpForm setUser={setUser} />
+                        )}
                     </div>
+
+
 
 
                     <div className='SocialMedia'>
