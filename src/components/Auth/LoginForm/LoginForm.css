@@ -40,6 +40,10 @@
     cursor: pointer;
 }
 
+.LoginBtn:hover {
+    background-color: rgb(0, 191, 255);
+}
+
 .LoginEmail {
     position: absolute;
     top: 13%;
@@ -52,4 +56,35 @@
     font-size: 2rem;
     top: 44%;
     left: 9%;
+}
+
+@media (max-width: 1000px) {
+
+    .LoginForm {
+        bottom: 1rem;
+        justify-content: space-evenly;
+    }
+
+    .LoginForm>input {
+        width: 85%;
+        height: 2.5rem;
+        font-size: 1rem;
+    }
+
+    .LoginBtn {
+        width: 87%;
+    }
+
+    .LoginEmail {
+        top: 11%;
+        left: 10%;
+        font-size: 1.5rem;
+    }
+
+    .LoginPW {
+        font-size: 1.5rem;
+        top: 41%;
+        left: 10%;
+    }
+
 }

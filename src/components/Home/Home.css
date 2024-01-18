@@ -6,6 +6,7 @@
     align-items: center;
     width: 100%;
     background-color: dodgerblue;
+    user-select: none;
 }
 
 .BlueSpikes {
@@ -166,7 +167,7 @@
 }
 
 .CreateAccountBtn:hover {
-    background-color: rgb(0, 4, 106);
+    background-color: rgb(0, 191, 255);
 }
 
 @media (max-width: 1310px) {

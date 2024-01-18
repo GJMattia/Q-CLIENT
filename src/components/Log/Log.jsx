@@ -23,8 +23,8 @@ export default function Log({ logType, setLogType, log, setLog, setUser }) {
                 <button className='X' onClick={toggleLog}>X</button>
 
                 <div className='LogButtons'>
-                    <button onClick={toggleSignIn}>Sign In</button>
-                    <button onClick={toggleCreate}>Register</button>
+                    <button className={logType === 0 ? 'ActiveLog' : 'NotActiveLog'} onClick={toggleSignIn}>Sign In</button>
+                    <button className={logType === 1 ? 'ActiveLog' : 'NotActiveLog'} onClick={toggleCreate}>Register</button>
                 </div>
 
                 <div className='LogOptions'>

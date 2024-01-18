@@ -33,6 +33,10 @@
     cursor: pointer;
 }
 
+.SignUpBtn:hover {
+    background-color: rgb(0, 191, 255);
+}
+
 .CreateUser {
     top: 6%;
     left: 10%;
@@ -57,4 +61,47 @@
     left: 10%;
     font-size: 1.2rem;
     filter: saturate(200%);
+}
+
+@media (max-width: 1000px) {
+
+    .SignUpForm {
+        bottom: 1rem;
+    }
+
+    .SignUpForm>input {
+        width: 85%;
+        height: 2rem;
+        text-indent: 2.5rem;
+        font-size: 1rem;
+
+    }
+
+    .SignUpBtn {
+        margin-top: .5rem;
+        height: 1.8rem;
+
+    }
+
+    .CreateUser {
+        top: 3%;
+        font-size: 1rem;
+    }
+
+    .CreateEmail {
+        top: 22.5%;
+        font-size: 1rem;
+    }
+
+    .CreatePW1 {
+        top: 42%;
+        font-size: 1rem;
+
+    }
+
+    .CreatePW2 {
+        top: 61%;
+        font-size: 1rem;
+        filter: saturate(200%);
+    }
 }
