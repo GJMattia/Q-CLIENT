@@ -16,6 +16,9 @@ export default function Log({ logType, setLogType, log, setLog, setUser }) {
         setLogType(1)
     }
 
+    function toggleSocial() {
+        setLogType(2)
+    }
 
     return (
         <div className='LogBackground'>
@@ -25,28 +28,30 @@ export default function Log({ logType, setLogType, log, setLog, setUser }) {
                 <div className='LogButtons'>
                     <button className={logType === 0 ? 'ActiveLog' : 'NotActiveLog'} onClick={toggleSignIn}>Sign In</button>
                     <button className={logType === 1 ? 'ActiveLog' : 'NotActiveLog'} onClick={toggleCreate}>Register</button>
+                    <button className={logType === 2 ? 'ActiveLog' : 'NotActiveLog'} onClick={toggleSocial}>Social Media</button>
                 </div>
 
-                <div className='LogOptions'>
-
-
-                    <div className='Manual'>
-                        {logType === 0 ? (
-                            <LoginForm log={log} setLog={setLog} setUser={setUser} />
-                        ) : (
-                            <SignUpForm setUser={setUser} />
-                        )}
-                    </div>
 
 
 
-
-                    <div className='SocialMedia'>
-                        <button>Sign in With Google</button>
-                        <button>Sign in with Facebook</button>
-                    </div>
-
+                <div className='LogDiv'>
+                    {logType === 0 ? (
+                        <LoginForm log={log} setLog={setLog} setUser={setUser} />
+                    ) : logType === 1 ? (
+                        <SignUpForm setUser={setUser} />
+                    ) : (
+                        <div className='SocialMedia'>
+                            <button>Sign in With Google</button>
+                            <button>Sign in with Facebook</button>
+                        </div>
+                    )}
                 </div>
+
+
+
+
+
+
 
 
 

@@ -12,7 +12,7 @@
     width: 85%;
     height: 2rem;
     border: 1px solid rgb(197, 197, 197);
-    text-indent: 3rem;
+    text-indent: 2.7rem;
     font-size: 1.1rem;
     border-radius: .2rem;
 }
@@ -38,70 +38,27 @@
 }
 
 .CreateUser {
-    top: 6%;
-    left: 10%;
+    top: 5.5%;
+    left: 9%;
     font-size: 1.2rem;
 }
 
 .CreateEmail {
     top: 25%;
-    left: 10%;
+    left: 9%;
     font-size: 1.2rem;
 }
 
 .CreatePW1 {
     top: 43%;
-    left: 10%;
+    left: 9%;
     font-size: 1.2rem;
     filter: saturate(0%);
 }
 
 .CreatePW2 {
     top: 62%;
-    left: 10%;
+    left: 9%;
     font-size: 1.2rem;
     filter: saturate(200%);
-}
-
-@media (max-width: 1000px) {
-
-    .SignUpForm {
-        bottom: 1rem;
-    }
-
-    .SignUpForm>input {
-        width: 85%;
-        height: 2rem;
-        text-indent: 2.5rem;
-        font-size: 1rem;
-
-    }
-
-    .SignUpBtn {
-        margin-top: .5rem;
-        height: 1.8rem;
-
-    }
-
-    .CreateUser {
-        top: 3%;
-        font-size: 1rem;
-    }
-
-    .CreateEmail {
-        top: 22.5%;
-        font-size: 1rem;
-    }
-
-    .CreatePW1 {
-        top: 42%;
-        font-size: 1rem;
-
-    }
-
-    .CreatePW2 {
-        top: 61%;
-        font-size: 1rem;
-        filter: saturate(200%);
-    }
 }
