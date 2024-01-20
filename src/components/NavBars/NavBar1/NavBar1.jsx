@@ -1,5 +1,6 @@
 import './NavBar1.css';
 
+
 export default function NavBar1({ log, setLog, setLogType }) {
 
 

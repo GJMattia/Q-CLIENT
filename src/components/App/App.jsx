@@ -8,8 +8,8 @@ import Sauce from '../Sauce/Sauce';
 import './App.css';
 import Footer from '../Footer/Footer';
 import Home from '../Home/Home';
-import HomeGraphics from '../HomeGraphics/HomeGraphics';
-import Log from '../Log/Log';
+import Google from '../Google/Google';
+
 
 export default function App() {
 
@@ -20,24 +20,22 @@ export default function App() {
 
   return (
     <div className='App'>
-
       {user ?
         <>
           <NavBar2 user={user} setUser={setUser} />
           <Routes>
             <Route path='/' element={<Profile />} />
-            <Route path='/sauce' element={<Sauce />} />
+            <Route path='/sauce' element={<Sauce user={user} />} />
           </Routes>
         </> :
         <>
+
           <NavBar1 log={log} setLog={setLog} setLogType={setLogType} />
+          <Google setUser={setUser} />
           <Home setUser={setUser} log={log} setLog={setLog} logType={logType} setLogType={setLogType} />
           <Footer />
         </>
       }
     </div>
   )
-}
-
-
-
+};

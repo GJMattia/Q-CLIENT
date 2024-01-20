@@ -1,42 +1,12 @@
 import './Home.css';
 import { useState } from 'react';
-import { signUp } from '../../../utilities/user-api';
 import BlueSpikes from '../../assets/pictures/BlueSpikes.png';
 import HomeGraphics from '../HomeGraphics/HomeGraphics';
 import Log from '../Log/Log';
-
+import SignUpForm from '../Auth/SignUpForm/SignUpForm';
 
 export default function Home({ setUser, log, setLog, logType, setLogType }) {
 
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        password: '',
-        confirm: '',
-        error: ''
-    });
-
-    const handleChange = (evt) => {
-        setFormData({
-            ...formData,
-            [evt.target.name]: evt.target.value,
-            error: ''
-        });
-    };
-
-    const handleSubmit = async (evt) => {
-        evt.preventDefault();
-        try {
-            const { error, confirm, ...data } = formData;
-
-            const user = await signUp(data);
-            setUser(user);
-        } catch (error) {
-            setFormData({ ...formData, error: 'Sign Up Failed - Try Again' });
-        }
-    };
-
-    const disable = formData.password !== formData.confirm;
 
     return (
         <>
@@ -55,19 +25,7 @@ export default function Home({ setUser, log, setLog, logType, setLogType }) {
                             <button >Sign in with Google</button>
                             <button >Sign in with Facebook</button>
                         </div>
-                        <form className='SignUpForm' autoComplete="off" onSubmit={handleSubmit}>
-                            <label className='UserIcon'>👤</label>
-                            <input placeholder='Username' type="text" name="name" value={formData.name} onChange={handleChange} required />
-                            <label className='EmailIcon'>📧</label>
-                            <input placeholder='Email Address' type="email" name="email" value={formData.email} onChange={handleChange} required />
-                            <label className='PWIcon1'>🔒</label>
-                            <input placeholder='Password' type="password" name="password" value={formData.password} onChange={handleChange} required />
-                            <label className='PWIcon2'>🔒</label>
-                            <input placeholder='Confirm Password' type="password" name="confirm" value={formData.confirm} onChange={handleChange} required />
-                            <button className='CreateAccountBtn' type="submit" disabled={disable}>
-                                Create My Account
-                            </button>
-                        </form>
+                        <SignUpForm setUser={setUser} />
                     </div>
                 </div>
             </div>
