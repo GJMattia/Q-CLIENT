@@ -8,8 +8,6 @@ import Sauce from '../Sauce/Sauce';
 import './App.css';
 import Footer from '../Footer/Footer';
 import Home from '../Home/Home';
-import Google from '../Google/Google';
-
 
 export default function App() {
 
@@ -29,9 +27,7 @@ export default function App() {
           </Routes>
         </> :
         <>
-
           <NavBar1 log={log} setLog={setLog} setLogType={setLogType} />
-          <Google setUser={setUser} />
           <Home setUser={setUser} log={log} setLog={setLog} logType={logType} setLogType={setLogType} />
           <Footer />
         </>

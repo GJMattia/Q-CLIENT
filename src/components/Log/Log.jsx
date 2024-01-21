@@ -1,6 +1,7 @@
 import './Log.css';
 import LoginForm from '../Auth/LoginForm/LoginForm';
 import SignUpForm from '../Auth/SignUpForm/SignUpForm';
+import Google from '../Google/Google';
 
 export default function Log({ logType, setLogType, log, setLog, setUser }) {
 

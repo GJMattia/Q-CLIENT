@@ -3,6 +3,10 @@ const BASE_URL = 'http://localhost:4741/users';
 // const BASE_URL = 'https://q-api.onrender.com/users';
 
 
+export async function checkUser(email) {
+    return sendRequest(`${BASE_URL}/checkuser`, 'POST', email)
+}
+
 export async function signUp(userData) {
     return sendRequest(BASE_URL, 'POST', userData)
 }

@@ -1,12 +1,11 @@
 import './Home.css';
-import { useState } from 'react';
 import BlueSpikes from '../../assets/pictures/BlueSpikes.png';
 import HomeGraphics from '../HomeGraphics/HomeGraphics';
 import Log from '../Log/Log';
 import SignUpForm from '../Auth/SignUpForm/SignUpForm';
+import Google from '../Google/Google';
 
 export default function Home({ setUser, log, setLog, logType, setLogType }) {
-
 
     return (
         <>
@@ -22,8 +21,7 @@ export default function Home({ setUser, log, setLog, logType, setLogType }) {
                     </div>
                     <div className='BoxTwo'>
                         <div className='SignInOptions'>
-                            <button >Sign in with Google</button>
-                            <button >Sign in with Facebook</button>
+                            <Google setUser={setUser} />
                         </div>
                         <SignUpForm setUser={setUser} />
                     </div>

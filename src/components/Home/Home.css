@@ -82,30 +82,10 @@
 
 .SignInOptions {
     display: flex;
-    justify-content: space-between;
-    width: 90%;
+    justify-content: center;
+    width: 100%;
     margin-top: .7rem;
 }
-
-.SignInOptions>button {
-    cursor: pointer;
-    border: 0;
-    padding: .5rem;
-    width: 48%;
-    color: white;
-    font-weight: 900;
-    border-radius: .3rem;
-    height: 2.3rem;
-}
-
-.SignInOptions>button:nth-child(1) {
-    background-color: rgb(46, 181, 46);
-}
-
-.SignInOptions>button:nth-child(2) {
-    background-color: rgb(51, 75, 184)
-}
-
 
 .SignUpForm {
     position: relative;
@@ -178,15 +158,9 @@
         font-size: 1.8rem;
     }
 
-    .SignInOptions>button {
-        font-size: .7rem;
-    }
-
 }
 
 @media (max-width: 1000px) {
-
-
 
     .SplitBox {
         width: 95%;
