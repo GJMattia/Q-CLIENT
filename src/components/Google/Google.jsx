@@ -3,10 +3,11 @@ import { jwtDecode } from "jwt-decode";
 import { useEffect } from 'react';
 import { signUp, login } from '../../../utilities/user-services';
 import * as usersAPI from '../../../utilities/user-api';
+import { createAccount } from '../../../utilities/accounts-api';
 
 export default function Google({ setUser }) {
 
-    async function hey(response) {
+    async function googleFunction(response) {
         let googleInfo = jwtDecode(response.credential);
         let data = {
             name: googleInfo.name,
@@ -25,6 +26,7 @@ export default function Google({ setUser }) {
                 setUser(user);
             } else {
                 const user = await signUp(data);
+                createAccount({ userID: user._id });
                 setUser(user);
             }
 
@@ -37,7 +39,7 @@ export default function Google({ setUser }) {
         /* global google */
         google.accounts.id.initialize({
             client_id: '278472483189-i60q3je7faglbpgr528i81agr29562db.apps.googleusercontent.com',
-            callback: hey
+            callback: googleFunction
         });
 
         google.accounts.id.renderButton(

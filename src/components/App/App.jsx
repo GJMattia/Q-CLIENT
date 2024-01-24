@@ -22,7 +22,7 @@ export default function App() {
         <>
           <NavBar2 user={user} setUser={setUser} />
           <Routes>
-            <Route path='/' element={<Profile />} />
+            <Route path='/' element={<Profile user={user} />} />
             <Route path='/sauce' element={<Sauce user={user} />} />
           </Routes>
         </> :

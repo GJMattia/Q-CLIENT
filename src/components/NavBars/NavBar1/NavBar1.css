@@ -9,13 +9,11 @@
     border-bottom: 1px solid white;
 }
 
-
 .WebsiteTitle {
     user-select: none;
     color: white;
     cursor: pointer;
 }
-
 
 .Btn-Log-Container {
     display: flex;
@@ -43,7 +41,6 @@
 
 }
 
-
 @media (max-width: 1000px) {
 
     .NavBar1 {
@@ -60,7 +57,4 @@
     .Btn-Log-Container {
         margin-bottom: 1rem;
     }
-
-
-
 }

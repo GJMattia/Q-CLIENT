@@ -9,7 +9,7 @@ export default function NavBarTwo({ user, setUser }) {
 
   return (
     <nav>
-      <Link to='/'>Main Page</Link>
+      <Link to='/'>Profile</Link>
       &nbsp;&nbsp;
       <Link to='/sauce'>Sauce</Link>
       <span>Welcome, {user.name}</span>
