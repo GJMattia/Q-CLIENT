@@ -5,4 +5,93 @@
     align-items: center;
     width: 70%;
     background-color: lightblue;
+    margin-top: 2rem;
+}
+
+
+.PersonalInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 70%;
+    background-color: lightgreen;
+}
+
+.Username {
+    text-align: center;
+    font-size: 3rem;
+    margin: .5rem;
+    text-transform: uppercase;
+    background-image: linear-gradient(-225deg,
+            #ffffff 0%,
+            rgb(0, 4, 74) 29%,
+            dodgerblue 67%,
+            #000000 100%);
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 3s linear infinite;
+    display: inline-block;
+}
+
+@keyframes textclip {
+    to {
+        background-position: 200% center;
+    }
+}
+
+.ProfilePicture {
+    width: 40%;
+}
+
+.ProfileOptions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 40%;
+    height: 2rem;
+    background-color: lightgoldenrodyellow;
+
+}
+
+.ProfileOptions>button {
+    background: transparent;
+    border: 0;
+    color: dodgerblue;
+    cursor: pointer;
+}
+
+.AccountInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 40%;
+    background-color: lightcyan;
+}
+
+.AccountInfo>p {
+    margin: .3rem;
+}
+
+.ProfileLevel {
+    font-weight: 900;
+    color: dodgerblue;
+}
+
+.ProfileAge {
+    text-align: center;
+    width: 80%;
+    color: gray;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid rgb(171, 171, 171);
+}
+
+.ProfileMotto {
+    padding-bottom: .5rem;
 }

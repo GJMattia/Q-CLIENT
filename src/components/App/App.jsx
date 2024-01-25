@@ -25,6 +25,7 @@ export default function App() {
             <Route path='/' element={<Profile user={user} />} />
             <Route path='/sauce' element={<Sauce user={user} />} />
           </Routes>
+          <Footer />
         </> :
         <>
           <NavBar1 log={log} setLog={setLog} setLogType={setLogType} />
