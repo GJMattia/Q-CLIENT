@@ -3,9 +3,13 @@ import { useState, useEffect } from 'react';
 import { getAccount } from '../../../utilities/accounts-api';
 import Default from '../../assets/pictures/default.jpeg';
 import XPBar from '../XPBar/XPBar';
+import EditMotto from '../EditMotto/EditMotto';
 
 export default function Profile({ user }) {
+
     const [account, setAccount] = useState(null);
+    const [motto, setMotto] = useState(false);
+
     useEffect(function () {
         async function getAccount2() {
             try {
@@ -24,20 +28,22 @@ export default function Profile({ user }) {
         const timeDifference = currentDate - oldDate;
         const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
         return daysDifference;
+    };
+
+    function toggleMotto() {
+        setMotto(!motto);
     }
-
-
-
 
     return (
         account && (
             <div className='Profile'>
+                {motto && <EditMotto motto={motto} setMotto={setMotto} account={account} setAccount={setAccount} />}
                 <div className='PersonalInfo'>
                     <h1 className='Username'>{user.name}</h1>
                     <img className='ProfilePicture' src={Default} />
                     <div className='ProfileOptions'>
                         <button>Upload Picture</button>
-                        <button>Edit Motto</button>
+                        <button onClick={toggleMotto}>Edit Motto</button>
                     </div>
                     <div className='AccountInfo'>
                         <p className='ProfileLevel'>Level {account.level}</p>

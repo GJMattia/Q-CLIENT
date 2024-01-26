@@ -14,3 +14,7 @@ export async function createAccount(userID) {
 export async function getAccount() {
     return sendRequest(BASE_URL);
 };
+
+export async function editMotto(motto) {
+    return sendRequest(`${BASE_URL}/motto`, 'PUT', motto)
+}
