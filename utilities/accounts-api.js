@@ -18,3 +18,8 @@ export async function getAccount() {
 export async function editMotto(motto) {
     return sendRequest(`${BASE_URL}/motto`, 'PUT', motto)
 }
+
+export async function updatePicture(pic) {
+    console.log(pic)
+    return sendRequest(`${BASE_URL}/pic`, 'PUT', pic)
+}

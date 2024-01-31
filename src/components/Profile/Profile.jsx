@@ -1,14 +1,18 @@
 import './Profile.css';
 import { useState, useEffect } from 'react';
 import { getAccount } from '../../../utilities/accounts-api';
-import Default from '../../assets/pictures/default.jpeg';
 import XPBar from '../XPBar/XPBar';
 import EditMotto from '../EditMotto/EditMotto';
+import ProPicUpload from '../ProPicUpload/ProPicUpload';
+
+
 
 export default function Profile({ user }) {
 
     const [account, setAccount] = useState(null);
     const [motto, setMotto] = useState(false);
+
+
 
     useEffect(function () {
         async function getAccount2() {
@@ -40,15 +44,17 @@ export default function Profile({ user }) {
                 {motto && <EditMotto motto={motto} setMotto={setMotto} account={account} setAccount={setAccount} />}
                 <div className='PersonalInfo'>
                     <h1 className='Username'>{user.name}</h1>
-                    <img className='ProfilePicture' src={Default} />
+                    <img className='ProfilePicture' src={account.pic} />
                     <div className='ProfileOptions'>
-                        <button>Upload Picture</button>
+
+                        <ProPicUpload account={account} setAccount={setAccount} />
+
                         <button onClick={toggleMotto}>Edit Motto</button>
                     </div>
                     <div className='AccountInfo'>
                         <p className='ProfileLevel'>Level {account.level}</p>
                         <p className='ProfileAge'>Joined {daysAgo(user.createdAt)} days ago</p>
-                        <p className='ProfileMotto'>{account.description}</p>
+                        <p className='ProfileMotto'>{account.motto}</p>
                     </div>
                     <XPBar XP={account.xp} />
                 </div>
