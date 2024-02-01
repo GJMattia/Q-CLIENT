@@ -1,0 +1,95 @@
+.EditPicBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.EditPic {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+    height: auto;
+    background-color: white;
+    border-radius: .2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.EditPic>h1 {
+    color: rgb(43, 43, 43);
+    text-align: center;
+    width: 90%;
+    border-bottom: 1px solid rgb(185, 185, 185);
+    padding-bottom: 1rem;
+}
+
+.EditPic>h5 {
+    text-align: center;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: .7rem
+}
+
+.PicBtnBox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 4.5rem;
+    background-color: rgb(244, 244, 244);
+    border-top: 1px solid rgb(183, 183, 183);
+}
+
+.PicBtnBox>button {
+    font-weight: 900;
+    border: 0;
+    width: 25%;
+    height: 3rem;
+    font-size: 1.3rem;
+    border-radius: .2rem;
+    cursor: pointer;
+}
+
+.PicBtnBox>button:nth-child(1) {
+    background-color: black;
+    color: white;
+}
+
+.PicBtnBox>button:nth-child(1):hover {
+    background-color: rgb(56, 56, 56);
+}
+
+
+.PicBtnBox>button:nth-child(2) {
+    background-color: dodgerblue;
+    color: white;
+}
+
+.PicBtnBox>button:nth-child(2):hover {
+    background-color: rgb(0, 166, 255);
+}
+
+.PicPreview {
+    width: 10rem;
+    background-color: red;
+    margin-bottom: 1rem;
+}
+
+.ChoosePic {
+    font-weight: 900;
+    border: 0;
+    width: auto;
+    height: 3rem;
+    font-size: 1.3rem;
+    border-radius: .2rem;
+    cursor: pointer;
+
+}

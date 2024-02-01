@@ -11,6 +11,7 @@ export default function Profile({ user }) {
 
     const [account, setAccount] = useState(null);
     const [motto, setMotto] = useState(false);
+    const [pic, setPic] = useState(false);
 
 
 
@@ -38,6 +39,10 @@ export default function Profile({ user }) {
         setMotto(!motto);
     }
 
+    function togglePic() {
+        setPic(!pic);
+    };
+
     return (
         account && (
             <div className='Profile'>
@@ -47,8 +52,8 @@ export default function Profile({ user }) {
                     <img className='ProfilePicture' src={account.pic} />
                     <div className='ProfileOptions'>
 
-                        <ProPicUpload account={account} setAccount={setAccount} />
-
+                        {pic && <ProPicUpload setAccount={setAccount} pic={pic} setPic={setPic} />}
+                        <button onClick={togglePic}>Change Picture</button>
                         <button onClick={toggleMotto}>Edit Motto</button>
                     </div>
                     <div className='AccountInfo'>
@@ -56,7 +61,7 @@ export default function Profile({ user }) {
                         <p className='ProfileAge'>Joined {daysAgo(user.createdAt)} days ago</p>
                         <p className='ProfileMotto'>{account.motto}</p>
                     </div>
-                    <XPBar XP={account.xp} />
+                    {/* <XPBar XP={account.xp} /> */}
                 </div>
             </div>
         )

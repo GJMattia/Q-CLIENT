@@ -46,7 +46,12 @@
 }
 
 .ProfilePicture {
-    width: 10rem;
+    width: 15rem;
+    height: 10rem;
+    object-fit: cover;
+    overflow: hidden;
+    object-position: 50% 10%;
+    border-radius: 1rem;
 }
 
 .ProfileOptions {
