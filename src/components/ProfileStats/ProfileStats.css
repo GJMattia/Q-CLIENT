@@ -1,0 +1,34 @@
+table {
+    background: #002f56;
+    border-radius: 0.25em;
+    border-collapse: collapse;
+    margin-top: 0rem;
+    width: 20%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+}
+
+
+th {
+    color: white;
+    border-bottom: 1px solid #858585;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 1rem;
+}
+
+td {
+    text-align: center;
+    color: #fff;
+    font-weight: 400;
+    padding: 1rem;
+}
+
+
+tbody tr {
+    transition: background 0.25s ease;
+}
+
+tbody tr:hover {
+    background: dodgerblue;
+}

@@ -4,6 +4,8 @@ import { getAccount } from '../../../utilities/accounts-api';
 import XPBar from '../XPBar/XPBar';
 import EditMotto from '../EditMotto/EditMotto';
 import ProPicUpload from '../ProPicUpload/ProPicUpload';
+import ProfileStats from '../ProfileStats/ProfileStats';
+import ProfileHL from '../ProfileHL/ProfileHL';
 
 
 
@@ -61,9 +63,17 @@ export default function Profile({ user }) {
                         <p className='ProfileAge'>Joined {daysAgo(user.createdAt)} days ago</p>
                         <p className='ProfileMotto'>{account.motto}</p>
                     </div>
+
                     {/* <XPBar XP={account.xp} /> */}
+
                 </div>
+                <ProfileHL categories={account.categories} />
+                <ProfileStats categories={account.categories} />
+
+
             </div>
+
         )
+
     );
 };

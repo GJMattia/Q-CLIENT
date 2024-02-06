@@ -3,6 +3,9 @@ import axios from 'axios';
 import { updatePicture } from '../../../utilities/accounts-api';
 import { getAccount } from '../../../utilities/accounts-api';
 import './ProPicUpload.css';
+
+
+
 export default function ProPicUpload({ setAccount, pic, setPic }) {
     const [selectedFile, setSelectedFile] = useState(null);
     const [previewURL, setPreviewURL] = useState(null);
@@ -19,7 +22,7 @@ export default function ProPicUpload({ setAccount, pic, setPic }) {
             formData.append('profilePicture', selectedFile);
 
             try {
-                const response = await axios.post('http://localhost:4741/upload-profile-picture', formData, {
+                const response = await axios.post('http://localhost:4741/upload', formData, {
                     headers: {
                         'Content-Type': 'multipart/form-data',
                     },

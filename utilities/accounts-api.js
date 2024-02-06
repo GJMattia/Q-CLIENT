@@ -20,6 +20,5 @@ export async function editMotto(motto) {
 }
 
 export async function updatePicture(pic) {
-    console.log(pic)
     return sendRequest(`${BASE_URL}/pic`, 'PUT', pic)
 }
