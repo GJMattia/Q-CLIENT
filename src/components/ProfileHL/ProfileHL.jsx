@@ -1,23 +1,24 @@
 import './ProfileHL.css';
 
 export default function ProfileHL({ categories }) {
+    const filteredCategories = Object.entries(categories)
+        .filter(([category, counts]) => counts['right'] > 0 || counts['wrong'] > 0)
+        .map(([category, counts]) => {
+            const rightCount = counts['right'];
+            const wrongCount = counts['wrong'];
+            const totalAttempts = rightCount + wrongCount;
+            const percentageRight = totalAttempts === 0 ? 0 : (rightCount / totalAttempts) * 100;
 
-    const categoryStats = Object.entries(categories).map(([category, counts]) => {
-        const rightCount = counts['right'];
-        const wrongCount = counts['wrong'];
-        const totalAttempts = rightCount + wrongCount;
-        const percentageRight = totalAttempts === 0 ? 0 : (rightCount / totalAttempts) * 100;
+            return {
+                category,
+                percentageRight,
+            };
+        });
 
-        return {
-            category,
-            percentageRight,
-        };
-    });
-
-    const overallRight = categoryStats.reduce((sum, stat) => sum + stat.percentageRight, 0);
-    const overallPercentage = overallRight / categoryStats.length;
-    const bestCategory = categoryStats.reduce((best, stat) => (stat.percentageRight > best.percentageRight ? stat : best), categoryStats[0]);
-    const worstCategory = categoryStats.reduce((worst, stat) => (stat.percentageRight < worst.percentageRight ? stat : worst), categoryStats[0]);
+    const overallRight = filteredCategories.reduce((sum, stat) => sum + stat.percentageRight, 0);
+    const overallPercentage = filteredCategories.length === 0 ? 0 : overallRight / filteredCategories.length;
+    const bestCategory = filteredCategories.reduce((best, stat) => (stat.percentageRight > best.percentageRight ? stat : best), filteredCategories[0]);
+    const worstCategory = filteredCategories.reduce((worst, stat) => (stat.percentageRight < worst.percentageRight ? stat : worst), filteredCategories[0]);
 
     const capitalizeFirstLetter = (string) => string.charAt(0).toUpperCase() + string.slice(1);
 

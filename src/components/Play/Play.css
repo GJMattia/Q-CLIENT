@@ -1,0 +1,9 @@
+.Play {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: lightblue;
+}

@@ -8,6 +8,7 @@ import Sauce from '../Sauce/Sauce';
 import './App.css';
 import Footer from '../Footer/Footer';
 import Home from '../Home/Home';
+import Play from '../Play/Play';
 
 export default function App() {
 
@@ -22,6 +23,7 @@ export default function App() {
         <>
           <NavBar2 user={user} setUser={setUser} />
           <Routes>
+            <Route path='/play' element={<Play />} />
             <Route path='/' element={<Profile user={user} />} />
             <Route path='/sauce' element={<Sauce user={user} />} />
           </Routes>

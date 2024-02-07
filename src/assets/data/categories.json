@@ -1,0 +1,48 @@
+{
+    "categories": {
+        "Film": {
+            "color": "#FF5733",
+            "code": 11
+        },
+        "Music": {
+            "color": "#9900FF",
+            "code": 12
+        },
+        "Television": {
+            "color": "#FF3366",
+            "code": 14
+        },
+        "Videogames": {
+            "color": "#33CCFF",
+            "code": 15
+        },
+        "Mythology": {
+            "color": "#FFD700",
+            "code": 20
+        },
+        "Sports": {
+            "color": "#00FF00",
+            "code": 21
+        },
+        "Geography": {
+            "color": "#0066FF",
+            "code": 22
+        },
+        "History": {
+            "color": "#FF9933",
+            "code": 23
+        },
+        "Politics": {
+            "color": "#CC0000",
+            "code": 24
+        },
+        "Animals": {
+            "color": "#9933CC",
+            "code": 27
+        },
+        "Vehicles": {
+            "color": "#FF66B2",
+            "code": 28
+        }
+    }
+}
