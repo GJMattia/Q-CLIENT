@@ -9,6 +9,8 @@ export default function PlaySettings({ questionSet, setQuestionSet }) {
     const [difficulty, setDifficulty] = useState('easy');
     const [selectedCategory, setSelectedCategory] = useState(11);
 
+    console.log(amount, difficulty, selectedCategory)
+
     // Functions for buttons
     const handleAmountClick = (newAmount) => {
         setAmount(newAmount);
@@ -16,7 +18,7 @@ export default function PlaySettings({ questionSet, setQuestionSet }) {
     };
 
     const handleDifficultyClick = (newDifficulty) => {
-        setDifficulty(newDifficulty.toLowerCase());
+        setDifficulty(newDifficulty);
         console.log(difficulty)
     };
 
@@ -46,10 +48,9 @@ export default function PlaySettings({ questionSet, setQuestionSet }) {
                 <button onClick={() => handleAmountClick(10)} className={amount === 10 ? 'selected' : ''}>10</button>
             </div>
             <div className='Difficulty'>
-                <button onClick={() => handleDifficultyClick('Easy')} className={difficulty === 'Easy' ? 'selected' : ''}>Easy</button>
-                <button onClick={() => handleDifficultyClick('Medium')} className={difficulty === 'Medium' ? 'selected' : ''}>Medium</button>
-                <button onClick={() => handleDifficultyClick('Hard')} className={difficulty === 'Hard' ? 'selected' : ''}>Hard</button>
-                <button onClick={() => handleDifficultyClick('Random')} className={difficulty === 'Random' ? 'selected' : ''}>Random</button>
+                <button onClick={() => handleDifficultyClick('easy')} className={difficulty === 'easy' ? 'selected' : ''}>Easy</button>
+                <button onClick={() => handleDifficultyClick('medium')} className={difficulty === 'medium' ? 'selected' : ''}>Medium</button>
+                <button onClick={() => handleDifficultyClick('hard')} className={difficulty === 'hard' ? 'selected' : ''}>Hard</button>
             </div>
 
             <div className='Category'>

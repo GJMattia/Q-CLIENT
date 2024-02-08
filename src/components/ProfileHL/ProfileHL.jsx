@@ -25,9 +25,11 @@ export default function ProfileHL({ categories }) {
     return (
         <table className='HighLights'>
             <thead>
-                <th>Overall %</th>
-                <th>Best Category</th>
-                <th>Worst Category</th>
+                <tr>
+                    <th>Overall %</th>
+                    <th>Best Category</th>
+                    <th>Worst Category</th>
+                </tr>
             </thead>
             <tbody>
                 <tr>
