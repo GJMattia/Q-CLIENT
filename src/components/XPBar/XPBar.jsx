@@ -1,12 +1,16 @@
 import './XPBar.css';
+import { useState } from 'react';
 
-export default function XPBar({ XP }) {
+export default function XPBar({ xp, level }) {
 
-    const meterWidth = `${XP}%`;
+
 
     return (
-        <div className='XPBar'>
-            <div className='Meter' style={{ width: meterWidth }}></div>
-        </div>
+        <>
+            <h2>Level {level}</h2>
+            <div className='XPBar'>
+                <div className='Meter' style={{ width: `${xp}%` }}></div>
+            </div>
+        </>
     )
 }

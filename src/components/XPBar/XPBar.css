@@ -1,16 +1,25 @@
 .XPBar {
-    position: relative;
-    margin: .5rem;
-    background-color: black;
-    width: 50%;
+    border: 2px solid black;
+    width: 30%;
     height: 2rem;
+
 }
 
-
 .Meter {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100%;
-    background-color: dodgerblue;
+    width: 0;
+    background: linear-gradient(90deg, rgb(64, 255, 30), rgba(255, 255, 255, 0.2));
+    background-size: 200% 100%;
+    animation: gradientAnimation 2s linear infinite;
+    transition: width 0.5s ease;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 100% 0;
+    }
+
+    100% {
+        background-position: -100% 0;
+    }
 }

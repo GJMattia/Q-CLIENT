@@ -24,7 +24,6 @@
 }
 
 .QuestionNumber {
-
     padding: 1rem;
     text-align: center;
     color: white;
@@ -66,7 +65,7 @@
 
 .Answer:hover {
     cursor: pointer;
-    background: dodgerblue;
+    background-color: black;
 }
 
 .Confirm {
@@ -74,7 +73,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: dodgerblue;
+    background-color: black;
     color: white;
     border: 1px solid white;
     box-shadow: 0 0 10px rgb(0, 0, 0);
@@ -84,6 +83,23 @@
     cursor: pointer;
 }
 
+.Confirm:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+
 .SelectedAnswer {
     background-color: black;
+}
+
+#Correct {
+    cursor: not-allowed;
+    border: 1px solid white;
+    background: lawngreen;
+}
+
+#Incorrect {
+    cursor: not-allowed;
+    background: red;
 }
