@@ -49,12 +49,12 @@ export default function Profile({ user }) {
         account && (
             <div className='Profile'>
                 {motto && <EditMotto motto={motto} setMotto={setMotto} account={account} setAccount={setAccount} />}
+                {pic && <ProPicUpload setAccount={setAccount} pic={pic} setPic={setPic} />}
                 <div className='PersonalInfo'>
                     <h1 className='Username'>{user.name}</h1>
                     <img className='ProfilePicture' src={account.pic} />
                     <div className='ProfileOptions'>
 
-                        {pic && <ProPicUpload setAccount={setAccount} pic={pic} setPic={setPic} />}
                         <button onClick={togglePic}>Change Picture</button>
                         <button onClick={toggleMotto}>Edit Motto</button>
                     </div>
@@ -64,9 +64,10 @@ export default function Profile({ user }) {
                         <p className='ProfileMotto'>{account.motto}</p>
                     </div>
 
-                    {/* <XPBar XP={account.xp} /> */}
+
 
                 </div>
+                <XPBar xp={account.xp} level={account.level} />
                 <ProfileHL categories={account.categories} />
                 <ProfileStats categories={account.categories} />
 

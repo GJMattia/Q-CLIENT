@@ -29,7 +29,7 @@ export default function Log({ logType, setLogType, log, setLog, setUser }) {
                 <div className='LogButtons'>
                     <button className={logType === 0 ? 'ActiveLog' : 'NotActiveLog'} onClick={toggleSignIn}>Sign In</button>
                     <button className={logType === 1 ? 'ActiveLog' : 'NotActiveLog'} onClick={toggleCreate}>Register</button>
-                    <button className={logType === 2 ? 'ActiveLog' : 'NotActiveLog'} onClick={toggleSocial}>Social Media</button>
+                    <button className={logType === 2 ? 'ActiveLog' : 'NotActiveLog'} onClick={toggleSocial}>Google</button>
                 </div>
 
 
@@ -42,8 +42,9 @@ export default function Log({ logType, setLogType, log, setLog, setUser }) {
                         <SignUpForm setUser={setUser} />
                     ) : (
                         <div className='SocialMedia'>
-                            <button>Sign in With Google</button>
-                            <button>Sign in with Facebook</button>
+                            <h1>Sign in with Google!</h1>
+                            <Google setUser={setUser} />
+                            <div className='Line'></div>
                         </div>
                     )}
                 </div>

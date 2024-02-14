@@ -1,8 +1,16 @@
 import './Quiz.css';
 import { useState, useEffect } from 'react';
 import * as accountAPI from '../../../utilities/accounts-api';
+import Correct from '../../assets/audio/correct.mp3';
+import Wrong from '../../assets/audio/wrong.mp3';
 
 export default function Quiz({ questionSet, account, setAccount }) {
+
+    //Audio
+    const playSound = (sound) => {
+        const audio = new Audio(sound);
+        audio.play();
+    }
 
     //Decodes JSON elements into readable HTML text
     function Decode(string) {
@@ -48,8 +56,10 @@ export default function Quiz({ questionSet, account, setAccount }) {
     function handleConfirm() {
         if (choice === questionSet[question].correct_answer) {
             console.log('correct, you earned 5xp');
+            playSound(Correct);
             addXp();
         } else {
+            playSound(Wrong);
             console.log('incorrect');
         }
         showAnswers();

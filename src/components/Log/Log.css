@@ -93,30 +93,21 @@
 .SocialMedia {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
     width: 100%;
     height: 100%;
 }
 
-.SocialMedia>button {
-    cursor: pointer;
-    border: 0;
-    width: 80%;
-    color: white;
-    font-weight: 900;
-    border-radius: .3rem;
-    font-size: 1.5rem;
-    height: 6rem;
-    margin: 1rem;
+.SocialMedia>h1 {
+    margin-bottom: 3rem;
+    color: rgb(47, 47, 47);
 }
 
-.SocialMedia>button:nth-child(1) {
-    background-color: rgb(46, 181, 46);
-}
-
-.SocialMedia>button:nth-child(2) {
-    background-color: rgb(51, 75, 184)
+.Line {
+    margin-top: 4rem;
+    width: 95%;
+    border-bottom: 1px solid rgb(167, 167, 167);
 }
 
 @media (max-width: 1420px) {

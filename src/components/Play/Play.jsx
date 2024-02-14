@@ -5,6 +5,7 @@ import PlaySettings from '../PlaySettings/PlaySettings';
 import Quiz from '../Quiz/Quiz';
 import Results from '../Results/Results';
 import XPBar from '../XPBar/XPBar';
+import Correct from '../../assets/audio/correct.mp3';
 
 
 export default function Play({ user }) {
