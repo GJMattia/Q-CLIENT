@@ -6,16 +6,13 @@ import EditMotto from '../EditMotto/EditMotto';
 import ProPicUpload from '../ProPicUpload/ProPicUpload';
 import ProfileStats from '../ProfileStats/ProfileStats';
 import ProfileHL from '../ProfileHL/ProfileHL';
-
-
+import Icon from '../../assets/badges/music_icon.png';
 
 export default function Profile({ user }) {
 
     const [account, setAccount] = useState(null);
     const [motto, setMotto] = useState(false);
     const [pic, setPic] = useState(false);
-
-
 
     useEffect(function () {
         async function getAccount2() {
@@ -67,9 +64,11 @@ export default function Profile({ user }) {
 
 
                 </div>
+                <img className='Icon' src={Icon} />
                 <XPBar xp={account.xp} level={account.level} />
                 <ProfileHL categories={account.categories} />
                 <ProfileStats categories={account.categories} />
+
 
 
             </div>

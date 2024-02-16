@@ -3,14 +3,24 @@ import { useState, useEffect } from 'react';
 import * as accountAPI from '../../../utilities/accounts-api';
 import Correct from '../../assets/audio/correct.mp3';
 import Wrong from '../../assets/audio/wrong.mp3';
+import Categories from '../../assets/data/categories.json';
 
-export default function Quiz({ questionSet, setQuestionSet, account, setAccount, setResults, setScore, score }) {
+export default function Quiz({ questionSet, setQuestionSet, setAccount, setResults, setScore, score }) {
+
+    function parseCategory(string) {
+        const parts = string.split(':');
+        if (parts.length > 1) {
+            return parts[1].trim();
+        } else {
+            return string.trim();
+        }
+    };
 
     //Audio
     const playSound = (sound) => {
         const audio = new Audio(sound);
         audio.play();
-    }
+    };
 
     //Decodes JSON elements into readable HTML text
     function Decode(string) {
@@ -22,7 +32,8 @@ export default function Quiz({ questionSet, setQuestionSet, account, setAccount,
     const [answers, setAnswers] = useState([]);
     const [choice, setChoice] = useState(null);
     const [next, setNext] = useState(true);
-
+    const [color, setColor] = useState(Categories.categories[parseCategory(questionSet[0].category)].color);
+    const [music, setMusic] = useState(Categories.categories[parseCategory(questionSet[0].category)].music)
 
     //Auto Shuffle when the question variable is changed.
     useEffect(shuffleAnswers, [question, questionSet]);
@@ -110,7 +121,7 @@ export default function Quiz({ questionSet, setQuestionSet, account, setAccount,
     }
 
     return (
-        <div className='QuizContainer'>
+        <div style={{ background: color }} className='QuizContainer'>
             <div className='QuestionContainer'>
                 <div className='QuestionNumber'>{question + 1}/ {questionSet.length}</div>
                 <div className='QuestionText'>{Decode(questionSet[question].question)}</div>

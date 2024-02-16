@@ -1,6 +1,8 @@
 import './PlaySettings.css';
 import CategoriesData from '../../assets/data/categories.json';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import Select from '../../assets/audio/select.mp3';
+import MenuMusic from '../../assets/music/menu.mp3';
 
 export default function PlaySettings({ setQuestionSet, setSettings }) {
 
@@ -9,22 +11,27 @@ export default function PlaySettings({ setQuestionSet, setSettings }) {
     const [difficulty, setDifficulty] = useState('easy');
     const [selectedCategory, setSelectedCategory] = useState(11);
 
+    //Audio
+    const playSound = (sound) => {
+        const audio = new Audio(sound);
+        audio.play();
+    };
 
     // Functions for buttons
     const handleAmountClick = (newAmount) => {
         setAmount(newAmount);
-        console.log(amount)
+        playSound(Select);
     };
 
     const handleDifficultyClick = (newDifficulty) => {
         setDifficulty(newDifficulty);
-        console.log(difficulty)
+        playSound(Select);
     };
 
     const handleCategoryClick = (category) => {
         const categoryData = CategoriesData.categories[category];
         setSelectedCategory(categoryData.code);
-        console.log(selectedCategory)
+        playSound(Select);
     };
 
     // Function for getting questions
@@ -43,14 +50,15 @@ export default function PlaySettings({ setQuestionSet, setSettings }) {
         <div className='PlaySettings'>
             <h1>How many questions?</h1>
             <div className='Amount'>
-                <button onClick={() => handleAmountClick(5)} className={amount === 5 ? 'selected' : ''}>5</button>
-                <button onClick={() => handleAmountClick(10)} className={amount === 10 ? 'selected' : ''}>10</button>
+                <button onClick={() => handleAmountClick(5)} className={`Five ${amount === 5 ? 'Selected' : ''}`}>5</button>
+                <button onClick={() => handleAmountClick(10)} className={`Ten ${amount === 10 ? 'Selected' : ''}`}>10</button>
             </div>
             <h1>Choose your difficulty</h1>
             <div className='Difficulty'>
-                <button onClick={() => handleDifficultyClick('easy')} className={difficulty === 'easy' ? 'selected' : ''}>Easy</button>
-                <button onClick={() => handleDifficultyClick('medium')} className={difficulty === 'medium' ? 'selected' : ''}>Medium</button>
-                <button onClick={() => handleDifficultyClick('hard')} className={difficulty === 'hard' ? 'selected' : ''}>Hard</button>
+                <button onClick={() => handleDifficultyClick('easy')} className={`Easy ${difficulty === 'easy' ? 'Selected' : ''}`}>Easy</button>
+                <button onClick={() => handleDifficultyClick('medium')} className={`Medium ${difficulty === 'medium' ? 'Selected' : ''}`}>Medium</button>
+                <button onClick={() => handleDifficultyClick('hard')} className={`Hard ${difficulty === 'hard' ? 'Selected' : ''}`}>Hard</button>
+
             </div>
             <h1>Pick your category</h1>
             <div className='Categories'>
@@ -59,7 +67,7 @@ export default function PlaySettings({ setQuestionSet, setSettings }) {
                         key={category}
                         onClick={() => handleCategoryClick(category)}
                         style={{ background: properties.color }}
-                        className={`CategoryBtn ${selectedCategory === properties.code ? 'selected' : ''}`}
+                        className={`CategoryBtn ${selectedCategory === properties.code ? 'Selected' : ''}`}
                     >
                         {category}
                     </button>

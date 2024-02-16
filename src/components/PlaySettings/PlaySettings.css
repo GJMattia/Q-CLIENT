@@ -4,10 +4,14 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-color: rgb(215, 215, 215);
-
+    background-color: rgb(206, 206, 206);
 }
 
+.Selected {
+    animation: pulse 1s infinite;
+}
+
+/* Question Amount  */
 .Amount>button {
     font-size: 1.3rem;
     position: relative;
@@ -19,6 +23,23 @@
     box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.5);
 }
 
+.Five {
+    color: white;
+    background-color: dodgerblue;
+}
+
+.Ten {
+    color: white;
+    background-color: darkblue;
+}
+
+.Amount>button:hover {
+    animation: pulse .3s infinite;
+}
+
+
+
+/* Difficulty */
 .Difficulty>button {
     font-size: 1.3rem;
     position: relative;
@@ -32,10 +53,29 @@
     font-weight: 900;
     margin: 1rem;
     box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.5);
-    border-radius: .3rem;
+    border-radius: .2rem;
     color: black;
 }
 
+.Easy {
+    background-color: lawngreen;
+}
+
+.Medium {
+    background-color: yellow;
+}
+
+.Hard {
+    background-color: red;
+}
+
+.Difficulty>button:hover {
+    animation: pulse .3s infinite;
+}
+
+
+
+/* Categories */
 .Categories {
     display: flex;
     align-items: center;
@@ -45,10 +85,6 @@
     background-color: black;
     box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.5);
 }
-
-
-
-/* Button */
 
 .CategoryBtn {
     font-size: 1.3rem;
@@ -67,10 +103,7 @@
     color: black;
 }
 
-.selected {
-    animation: pulse 1s infinite;
-}
-
+/* Begin Button */
 .Begin {
     margin-top: 5rem;
     font-size: 1.3rem;
