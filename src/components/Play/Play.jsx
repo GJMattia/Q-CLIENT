@@ -5,13 +5,16 @@ import PlaySettings from '../PlaySettings/PlaySettings';
 import Quiz from '../Quiz/Quiz';
 import Results from '../Results/Results';
 import XPBar from '../XPBar/XPBar';
-import Correct from '../../assets/audio/correct.mp3';
+
 
 
 export default function Play({ user }) {
 
     const [account, setAccount] = useState(null);
     const [questionSet, setQuestionSet] = useState(null);
+    const [settings, setSettings] = useState(true);
+    const [results, setResults] = useState(false);
+    const [score, setScore] = useState([]);
 
 
     useEffect(function () {
@@ -31,11 +34,11 @@ export default function Play({ user }) {
 
         account && (
             <div className='Play'>
-
-                <PlaySettings questionSet={questionSet} setQuestionSet={setQuestionSet} />
-                {questionSet && <Quiz questionSet={questionSet} account={account} setAccount={setAccount} />}
-                {/* <Results /> */}
                 <XPBar xp={account.xp} level={account.level} />
+                {settings && <PlaySettings setQuestionSet={setQuestionSet} setSettings={setSettings} />}
+                {questionSet && <Quiz questionSet={questionSet} setQuestionSet={setQuestionSet} account={account} setAccount={setAccount} setResults={setResults} setScore={setScore} score={score} />}
+                {results && <Results score={score} />}
+
             </div>
         )
     )

@@ -4,7 +4,7 @@ import * as accountAPI from '../../../utilities/accounts-api';
 import Correct from '../../assets/audio/correct.mp3';
 import Wrong from '../../assets/audio/wrong.mp3';
 
-export default function Quiz({ questionSet, account, setAccount }) {
+export default function Quiz({ questionSet, setQuestionSet, account, setAccount, setResults, setScore, score }) {
 
     //Audio
     const playSound = (sound) => {
@@ -22,6 +22,7 @@ export default function Quiz({ questionSet, account, setAccount }) {
     const [answers, setAnswers] = useState([]);
     const [choice, setChoice] = useState(null);
     const [next, setNext] = useState(true);
+
 
     //Auto Shuffle when the question variable is changed.
     useEffect(shuffleAnswers, [question, questionSet]);
@@ -55,12 +56,12 @@ export default function Quiz({ questionSet, account, setAccount }) {
 
     function handleConfirm() {
         if (choice === questionSet[question].correct_answer) {
-            console.log('correct, you earned 5xp');
             playSound(Correct);
             addXp();
+            setScore([...score, `Question ${question}: Correct, +5xp`])
         } else {
             playSound(Wrong);
-            console.log('incorrect');
+            setScore([...score, `Question ${question}: Incorrect`])
         }
         showAnswers();
         setNext(!next);
@@ -86,7 +87,8 @@ export default function Quiz({ questionSet, account, setAccount }) {
 
     function nextQuestion() {
         if (question === questionSet.length - 1) {
-            return;
+            setResults(true);
+            setQuestionSet(null);
         };
         const selectedAnswer = document.querySelector('.SelectedAnswer');
         if (selectedAnswer) {
