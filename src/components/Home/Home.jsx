@@ -16,7 +16,6 @@ export default function Home({ setUser, log, setLog, logType, setLogType }) {
             <div className='Home'>
                 <img className='BlueSpikes' src={BlueSpikes} />
                 <div className='SplitBox'>
-
                     <div className='BoxOne'>
                         <h1>Unleash Your Wisdom</h1>
                         <p>Empowering minds through diverse quizzes, tracking achievements, and earning

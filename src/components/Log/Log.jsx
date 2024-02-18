@@ -32,9 +32,6 @@ export default function Log({ logType, setLogType, log, setLog, setUser }) {
                     <button className={logType === 2 ? 'ActiveLog' : 'NotActiveLog'} onClick={toggleSocial}>Google</button>
                 </div>
 
-
-
-
                 <div className='LogDiv'>
                     {logType === 0 ? (
                         <LoginForm log={log} setLog={setLog} setUser={setUser} />

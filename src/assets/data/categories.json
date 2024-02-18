@@ -3,57 +3,57 @@
         "Film": {
             "color": "#FF5733",
             "code": 11,
-            "music": "../../assets/music/film.mp3"
+            "badge": "src/assets/badges/film_icon.png"
         },
         "Music": {
             "color": "#9900FF",
             "code": 12,
-            "music": "../../assets/music/music.mp3"
+            "badge": "src/assets/badges/music_icon.png"
         },
         "Television": {
             "color": "#FF3366",
             "code": 14,
-            "music": "../../assets/music/televison.mp3"
+            "badge": "src/assets/badges/televison_icon.png"
         },
         "Video Games": {
             "color": "#33CCFF",
             "code": 15,
-            "music": "../../assets/music/videogames.mp3"
+            "badge": "src/assets/badges/videogames_icon.png"
         },
         "Mythology": {
             "color": "#FFD700",
             "code": 20,
-            "music": "../../assets/music/mythology.mp3"
+            "badge": "src/assets/badges/mythology_icon.png"
         },
         "Sports": {
             "color": "#00FF00",
             "code": 21,
-            "music": "../../assets/music/sports.mp3"
+            "badge": "src/assets/badges/sports_icon.png"
         },
         "Geography": {
             "color": "#0066FF",
             "code": 22,
-            "music": "../../assets/music/geography.mp3"
+            "badge": "src/assets/badges/geography_icon.png"
         },
         "History": {
             "color": "#FF9933",
             "code": 23,
-            "music": "../../assets/music/history.mp3"
+            "badge": "src/assets/badges/history_icon.png"
         },
         "Politics": {
             "color": "#CC0000",
             "code": 24,
-            "music": "../../assets/music/politics.mp3"
+            "badge": "src/assets/badges/politics_icon.png"
         },
         "Animals": {
             "color": "#9933CC",
             "code": 27,
-            "music": "../../assets/music/animals.mp3"
+            "badge": "src/assets/badges/animals_icon.png"
         },
         "Vehicles": {
             "color": "#FF66B2",
             "code": 28,
-            "music": "../../assets/music/vehicles.mp3"
+            "badge": "src/assets/badges/vehicles_icon.png"
         }
     }
 }

@@ -9,6 +9,7 @@ export default function PlaySettings({ setQuestionSet, setSettings, setSong }) {
     const [amount, setAmount] = useState(5);
     const [difficulty, setDifficulty] = useState('easy');
     const [selectedCategory, setSelectedCategory] = useState(11);
+    const [nextSong, setNextSong] = useState(null);
 
     //Audio
     const playSound = (sound) => {
@@ -31,7 +32,7 @@ export default function PlaySettings({ setQuestionSet, setSettings, setSong }) {
         const categoryData = CategoriesData.categories[category];
         setSelectedCategory(categoryData.code);
         playSound(Select);
-        setSong(categoryData.code);
+        setNextSong(categoryData.code);
     };
 
     // Function for getting questions
@@ -41,6 +42,7 @@ export default function PlaySettings({ setQuestionSet, setSettings, setSong }) {
             const data = await response.json();
             setQuestionSet(data.results);
             setSettings(false);
+            setSong(nextSong);
         } catch (error) {
             console.error('Error getting quiz questions', error);
         }
