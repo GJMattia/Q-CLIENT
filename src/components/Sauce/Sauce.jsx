@@ -1,20 +1,26 @@
-import { useState } from 'react';
 import './Sauce.css';
+import { useRef, useEffect } from 'react';
 
 export default function Sauce() {
-    const [xp, setXP] = useState(0);
+    const music = useRef(null);
+    const songFolder = 'src/assets/music';
 
-    const handleAddXP = () => {
-        setXP(prevXP => prevXP + 10);
+    const playSong = () => {
+        if (music.current) {
+            music.current.src = `${songFolder}/menu.mp3`;
+            music.current.play();
+        }
     };
 
-
+    useEffect(() => {
+        // Call playSong when the component mounts
+        playSong();
+    }, []); // The empty dependency array ensures this effect runs only once on mount
 
     return (
-
         <div className='Black'>
-            <button class="CategoryBtn"><span>Read More</span></button>
-
+            <audio ref={music} />
+            <h1>adsjfkalsdfj</h1>
         </div>
     );
 }

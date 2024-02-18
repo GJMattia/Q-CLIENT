@@ -24,6 +24,10 @@ export async function updatePicture(pic) {
 }
 
 export async function addXp(xp) {
-    console.log('hello')
     return sendRequest(`${BASE_URL}/xp`, 'PUT', xp);
+}
+
+export async function submitAnswer(status) {
+    console.log('my name is grizworld', status);
+    return sendRequest(`${BASE_URL}/stats`, 'PUT', status);
 }

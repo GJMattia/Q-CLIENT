@@ -1,0 +1,15 @@
+.MusicPlayer {
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 15%;
+    height: 2rem;
+    border: 2px solid black;
+}
+
+.MusicPlayer>button {
+    background: transparent;
+    border: 0;
+    font-size: 1rem;
+}

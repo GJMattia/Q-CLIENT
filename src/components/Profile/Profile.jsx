@@ -51,7 +51,6 @@ export default function Profile({ user }) {
                     <h1 className='Username'>{user.name}</h1>
                     <img className='ProfilePicture' src={account.pic} />
                     <div className='ProfileOptions'>
-
                         <button onClick={togglePic}>Change Picture</button>
                         <button onClick={toggleMotto}>Edit Motto</button>
                     </div>
@@ -60,20 +59,12 @@ export default function Profile({ user }) {
                         <p className='ProfileAge'>Joined {daysAgo(user.createdAt)} days ago</p>
                         <p className='ProfileMotto'>{account.motto}</p>
                     </div>
-
-
-
                 </div>
                 <img className='Icon' src={Icon} />
                 <XPBar xp={account.xp} level={account.level} />
-                <ProfileHL categories={account.categories} />
+                {/* <ProfileHL categories={account.categories} /> */}
                 <ProfileStats categories={account.categories} />
-
-
-
             </div>
-
         )
-
     );
 };

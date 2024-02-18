@@ -7,6 +7,27 @@ import Categories from '../../assets/data/categories.json';
 
 export default function Quiz({ questionSet, setQuestionSet, setAccount, setResults, setScore, score }) {
 
+    //State Variables
+    const [question, setQuestion] = useState(0);
+    const [answers, setAnswers] = useState([]);
+    const [choice, setChoice] = useState(null);
+    const [next, setNext] = useState(true);
+    const [color, setColor] = useState(Categories.categories[parseCategory(questionSet[0].category)].color);
+
+    //Auto Shuffle when the question variable is changed.
+    useEffect(shuffleAnswers, [question, questionSet]);
+
+    //Audio
+    const playSound = (sound) => {
+        const audio = new Audio(sound);
+        audio.play();
+    };
+
+    //Decoding strings
+    function Decode(string) {
+        return new DOMParser().parseFromString(string, 'text/html').documentElement.textContent;
+    };
+
     function parseCategory(string) {
         const parts = string.split(':');
         if (parts.length > 1) {
@@ -16,27 +37,21 @@ export default function Quiz({ questionSet, setQuestionSet, setAccount, setResul
         }
     };
 
-    //Audio
-    const playSound = (sound) => {
-        const audio = new Audio(sound);
-        audio.play();
+    function parseCategory2(string) {
+        const newString = string.replace(/\s/g, '').toLowerCase();
+        return newString;
     };
 
-    //Decodes JSON elements into readable HTML text
-    function Decode(string) {
-        return new DOMParser().parseFromString(string, 'text/html').documentElement.textContent;
+    function dLevelColor(string) {
+        switch (string) {
+            case 'easy':
+                return 'lawngreen';
+            case 'medium':
+                return 'yellow';
+            case 'hard':
+                return 'red';
+        }
     };
-
-    //State Variables
-    const [question, setQuestion] = useState(0);
-    const [answers, setAnswers] = useState([]);
-    const [choice, setChoice] = useState(null);
-    const [next, setNext] = useState(true);
-    const [color, setColor] = useState(Categories.categories[parseCategory(questionSet[0].category)].color);
-    const [music, setMusic] = useState(Categories.categories[parseCategory(questionSet[0].category)].music)
-
-    //Auto Shuffle when the question variable is changed.
-    useEffect(shuffleAnswers, [question, questionSet]);
 
     //This function shuffles array of correct and incorrect answers
     function shuffleArray(array) {
@@ -53,7 +68,6 @@ export default function Quiz({ questionSet, setQuestionSet, setAccount, setResul
     };
 
     //Choosing an answer
-
     function handleChoice(event) {
         const selectedAnswer = document.querySelector('.SelectedAnswer');
         if (selectedAnswer) {
@@ -65,19 +79,23 @@ export default function Quiz({ questionSet, setQuestionSet, setAccount, setResul
 
     };
 
+    //Submitting answer
     function handleConfirm() {
         if (choice === questionSet[question].correct_answer) {
             playSound(Correct);
             addXp();
+            submitAnswer(1);
             setScore([...score, `Question ${question}: Correct, +5xp`])
         } else {
             playSound(Wrong);
+            submitAnswer(0);
             setScore([...score, `Question ${question}: Incorrect`])
         }
         showAnswers();
         setNext(!next);
     };
 
+    //Showing the right and wrong answers
     function showAnswers() {
         let answerElements = document.querySelectorAll('.Answer');
         for (let i = 0; i < answerElements.length; i++) {
@@ -89,6 +107,7 @@ export default function Quiz({ questionSet, setQuestionSet, setAccount, setResul
         }
     };
 
+    //Hides correct and incorrect answers
     function hideAnswers() {
         let answerElements = document.querySelectorAll('.Answer');
         answerElements.forEach(function (element) {
@@ -96,6 +115,7 @@ export default function Quiz({ questionSet, setQuestionSet, setAccount, setResul
         })
     };
 
+    //Loads next Question
     function nextQuestion() {
         if (question === questionSet.length - 1) {
             setResults(true);
@@ -111,17 +131,39 @@ export default function Quiz({ questionSet, setQuestionSet, setAccount, setResul
         setNext(!next);
     };
 
+    function xpCalc(string) {
+        switch (string) {
+            case 'easy':
+                return 5;
+            case 'medium':
+                return 10;
+            case 'hard':
+                return 15;
+        }
+    }
+
     async function addXp() {
+        let earned = xpCalc(questionSet[question].difficulty);
         try {
-            const response = await accountAPI.addXp({ xp: 17 });
+            const response = await accountAPI.addXp({ xp: earned });
             setAccount(response);
         } catch (error) {
             console.error('Error Awarding XP'.error)
         }
-    }
+    };
+
+    async function submitAnswer(number) {
+        let category = parseCategory2(parseCategory(questionSet[0].category));
+        try {
+            await accountAPI.submitAnswer({ category: category, status: number });
+        } catch (error) {
+            console.error('Error awarding correct answer'.error)
+        }
+    };
 
     return (
         <div style={{ background: color }} className='QuizContainer'>
+            <div style={{ background: dLevelColor(questionSet[question].difficulty) }} className='Dlevel'>{questionSet[question].difficulty}</div>
             <div className='QuestionContainer'>
                 <div className='QuestionNumber'>{question + 1}/ {questionSet.length}</div>
                 <div className='QuestionText'>{Decode(questionSet[question].question)}</div>

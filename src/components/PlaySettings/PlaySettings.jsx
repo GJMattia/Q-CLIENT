@@ -1,10 +1,9 @@
 import './PlaySettings.css';
 import CategoriesData from '../../assets/data/categories.json';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Select from '../../assets/audio/select.mp3';
-import MenuMusic from '../../assets/music/menu.mp3';
 
-export default function PlaySettings({ setQuestionSet, setSettings }) {
+export default function PlaySettings({ setQuestionSet, setSettings, setSong }) {
 
     // Variables for Quiz Settings
     const [amount, setAmount] = useState(5);
@@ -32,6 +31,7 @@ export default function PlaySettings({ setQuestionSet, setSettings }) {
         const categoryData = CategoriesData.categories[category];
         setSelectedCategory(categoryData.code);
         playSound(Select);
+        setSong(categoryData.code);
     };
 
     // Function for getting questions
