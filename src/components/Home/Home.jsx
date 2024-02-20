@@ -9,6 +9,7 @@ export default function Home({ setUser, log, setLog, logType, setLogType }) {
 
     function toggleLog() {
         setLog(!log);
+        document.body.style.overflow = log ? 'auto' : 'hidden';
     };
 
     return (
@@ -26,7 +27,7 @@ export default function Home({ setUser, log, setLog, logType, setLogType }) {
                         <div className='SignInOptions'>
                             <h1 className='SignTitle'>Sign up for free!</h1>
                         </div>
-                        <SignUpForm setUser={setUser} />
+                        <SignUpForm log={log} setLog={setLog} setUser={setUser} />
                     </div>
                 </div>
             </div>

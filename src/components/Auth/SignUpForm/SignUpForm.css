@@ -1,3 +1,7 @@
+.Error2 {
+    display: none;
+}
+
 .SignUpForm {
     display: flex;
     flex-direction: column;

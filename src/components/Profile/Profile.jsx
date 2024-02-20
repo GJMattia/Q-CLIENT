@@ -36,10 +36,12 @@ export default function Profile({ user }) {
 
     function toggleMotto() {
         setMotto(!motto);
+        document.body.style.overflow = motto ? 'auto' : 'hidden';
     }
 
     function togglePic() {
         setPic(!pic);
+        document.body.style.overflow = pic ? 'auto' : 'hidden';
     };
 
     return (
@@ -60,7 +62,7 @@ export default function Profile({ user }) {
                         <p className='ProfileMotto'>{account.motto}</p>
                     </div>
                 </div>
-                <ProfileHL categories={account.categories} />
+                {/* <ProfileHL categories={account.categories} /> */}
                 <Badges account={account} />
                 <XPBar xp={account.xp} level={account.level} />
                 <ProfileStats categories={account.categories} />

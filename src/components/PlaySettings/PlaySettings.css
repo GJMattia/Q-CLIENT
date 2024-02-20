@@ -4,11 +4,24 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-color: rgb(206, 206, 206);
+    backdrop-filter: blur(10px);
+    animation: backgroundAnimation 15s infinite alternate;
 }
 
 .Selected {
     animation: pulse 1s infinite;
+}
+
+@keyframes backgroundAnimation {
+
+    0%,
+    100% {
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    50% {
+        background-color: rgba(255, 255, 255, 0.3);
+    }
 }
 
 /* Question Amount  */
@@ -82,7 +95,7 @@
     justify-content: space-between;
     flex-wrap: wrap;
     width: 50%;
-    background-color: black;
+    padding: 1rem;
     box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.5);
 }
 
@@ -103,9 +116,13 @@
     color: black;
 }
 
+.CategoryBtn:hover {
+    animation: pulse .5s infinite;
+}
+
 /* Begin Button */
 .Begin {
-    margin-top: 5rem;
+    margin: 5rem;
     font-size: 1.3rem;
     position: relative;
     width: 50%;
@@ -118,5 +135,6 @@
 }
 
 .Begin:hover {
+    animation: pulse .3s infinite;
     background-color: darkblue;
 }

@@ -3,7 +3,13 @@ import { signUp } from '../../../../utilities/user-services';
 import './SignUpForm.css';
 import { createAccount } from '../../../../utilities/accounts-api';
 
-export default function SignUpForm({ setUser }) {
+export default function SignUpForm({ setUser, log, setLog }) {
+
+  function toggleLog() {
+    setLog(false);
+    document.body.style.overflow = 'auto';
+  };
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -25,8 +31,10 @@ export default function SignUpForm({ setUser }) {
     try {
       const { error, confirm, ...data } = formData;
       const user = await signUp(data);
+      toggleLog();
       createAccount({ userID: user._id });
       setUser(user);
+      console.log(log)
     } catch (error) {
       setFormData({ ...formData, error: 'Sign Up Failed - Try Again' });
     }
@@ -49,7 +57,7 @@ export default function SignUpForm({ setUser }) {
           Create My Account
         </button>
       </form>
-      <p className="error-message">&nbsp;{formData.error}</p>
+      <p className="Error2">{formData.error}</p>
     </>
   );
 };

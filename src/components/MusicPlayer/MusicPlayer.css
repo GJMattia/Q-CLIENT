@@ -6,6 +6,11 @@
     width: 15%;
     height: 2rem;
     border: 2px solid black;
+    position: absolute;
+    background-color: red;
+    z-index: 1;
+    top: 5rem;
+    left: 20rem;
 }
 
 .MusicPlayer>button {

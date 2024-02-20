@@ -11,6 +11,7 @@ export default function EditMotto({ motto, setMotto, account, setAccount }) {
 
     function toggleMotto() {
         setMotto(!motto);
+        document.body.style.overflow = motto ? 'auto' : 'hidden';
     }
 
     async function submitMotto() {

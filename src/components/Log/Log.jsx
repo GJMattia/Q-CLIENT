@@ -7,6 +7,7 @@ export default function Log({ logType, setLogType, log, setLog, setUser }) {
 
     function toggleLog() {
         setLog(!log);
+        document.body.style.overflow = log ? 'auto' : 'hidden';
     };
 
     function toggleSignIn() {
@@ -36,11 +37,11 @@ export default function Log({ logType, setLogType, log, setLog, setUser }) {
                     {logType === 0 ? (
                         <LoginForm log={log} setLog={setLog} setUser={setUser} />
                     ) : logType === 1 ? (
-                        <SignUpForm setUser={setUser} />
+                        <SignUpForm log={log} setLog={setLog} setUser={setUser} />
                     ) : (
                         <div className='SocialMedia'>
                             <h1>Sign in with Google!</h1>
-                            <Google setUser={setUser} />
+                            <Google log={log} setLog={setLog} setUser={setUser} />
                             <div className='Line'></div>
                         </div>
                     )}

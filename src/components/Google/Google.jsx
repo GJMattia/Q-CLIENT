@@ -5,7 +5,12 @@ import { signUp, login } from '../../../utilities/user-services';
 import * as usersAPI from '../../../utilities/user-api';
 import { createAccount } from '../../../utilities/accounts-api';
 
-export default function Google({ setUser }) {
+export default function Google({ setUser, log, setLog }) {
+
+    function toggleLog() {
+        setLog(!log);
+        document.body.style.overflow = log ? 'auto' : 'hidden';
+    };
 
     async function googleFunction(response) {
         let googleInfo = jwtDecode(response.credential);
@@ -24,10 +29,12 @@ export default function Google({ setUser }) {
                     password: 'slop344'
                 });
                 setUser(user);
+                toggleLog();
             } else {
                 const user = await signUp(data);
                 createAccount({ userID: user._id });
                 setUser(user);
+                toggleLog();
             }
 
         } catch (error) {

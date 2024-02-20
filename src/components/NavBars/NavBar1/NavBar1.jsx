@@ -6,12 +6,14 @@ export default function NavBar1({ log, setLog, setLogType }) {
 
     function toggleSignIn() {
         setLog(!log);
-        setLogType(0)
+        setLogType(0);
+        document.body.style.overflow = log ? 'auto' : 'hidden';
     }
 
     function toggleCreate() {
         setLog(!log);
-        setLogType(1)
+        setLogType(1);
+        document.body.style.overflow = log ? 'auto' : 'hidden';
     }
 
     return (

@@ -12,7 +12,7 @@ export default function Quiz({ questionSet, setQuestionSet, setAccount, setResul
     const [answers, setAnswers] = useState([]);
     const [choice, setChoice] = useState(null);
     const [next, setNext] = useState(true);
-    const [color, setColor] = useState(Categories.categories[parseCategory(questionSet[0].category)].color);
+    const [color, setColor] = useState(Categories.categories[parseCategory(questionSet[0].category)].quiz);
 
     //Auto Shuffle when the question variable is changed.
     useEffect(shuffleAnswers, [question, questionSet]);

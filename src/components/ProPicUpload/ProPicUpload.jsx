@@ -52,6 +52,7 @@ export default function ProPicUpload({ setAccount, pic, setPic }) {
     function togglePic() {
         setPic(!pic);
         setPreviewURL(null);
+        document.body.style.overflow = pic ? 'auto' : 'hidden';
     }
 
     return (
