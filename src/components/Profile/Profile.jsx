@@ -63,7 +63,6 @@ export default function Profile({ user }) {
                 <ProfileHL categories={account.categories} />
                 <Badges account={account} />
                 <XPBar xp={account.xp} level={account.level} />
-
                 <ProfileStats categories={account.categories} />
             </div>
         )

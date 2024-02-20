@@ -9,7 +9,8 @@
     flex-wrap: wrap;
     box-shadow: 0 4px 8px #000000;
     padding: 1rem;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
+    filter: saturate(150%);
 }
 
 
@@ -21,10 +22,22 @@
     flex-direction: column;
 }
 
+.Badges:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.Badge>h5 {
+    color: white;
+    margin-top: 0;
+    margin-bottom: .5rem;
+}
+
 .Badge>p {
-    margin: .5rem;
+    color: white;
+    margin-top: .5rem;
+    margin-bottom: 0;
 }
 
 .Icon {
-    width: 4rem;
+    width: 5rem;
 }

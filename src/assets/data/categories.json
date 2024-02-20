@@ -3,57 +3,90 @@
         "Film": {
             "color": "#FF5733",
             "code": 11,
-            "badge": "src/assets/badges/film_icon.png"
+            "gold": "src/assets/badges/film_gold.png",
+            "silver": "src/assets/badges/film_silver.png",
+            "bronze": "src/assets/badges/film_bronze.png",
+            "zero": "src/assets/badges/film_zero.png"
         },
         "Music": {
             "color": "#9900FF",
             "code": 12,
-            "badge": "src/assets/badges/music_icon.png"
+            "gold": "src/assets/badges/music_gold.png",
+            "silver": "src/assets/badges/music_silver.png",
+            "bronze": "src/assets/badges/music_bronze.png",
+            "zero": "src/assets/badges/music_zero.png"
         },
         "Television": {
             "color": "#FF3366",
             "code": 14,
-            "badge": "src/assets/badges/televison_icon.png"
+            "gold": "src/assets/badges/television_gold.png",
+            "silver": "src/assets/badges/television_silver.png",
+            "bronze": "src/assets/badges/television_bronze.png",
+            "zero": "src/assets/badges/television_zero.png"
         },
         "Video Games": {
             "color": "#33CCFF",
             "code": 15,
-            "badge": "src/assets/badges/videogames_icon.png"
+            "gold": "src/assets/badges/videogames_gold.png",
+            "silver": "src/assets/badges/videogames_silver.png",
+            "bronze": "src/assets/badges/videogames_bronze.png",
+            "zero": "src/assets/badges/videogames_zero.png"
         },
         "Mythology": {
             "color": "#FFD700",
             "code": 20,
-            "badge": "src/assets/badges/mythology_icon.png"
+            "gold": "src/assets/badges/mythology_gold.png",
+            "silver": "src/assets/badges/mythology_silver.png",
+            "bronze": "src/assets/badges/mythology_bronze.png",
+            "zero": "src/assets/badges/mythology_zero.png"
         },
         "Sports": {
             "color": "#00FF00",
             "code": 21,
-            "badge": "src/assets/badges/sports_icon.png"
+            "gold": "src/assets/badges/sports_gold.png",
+            "silver": "src/assets/badges/sports_silver.png",
+            "bronze": "src/assets/badges/sports_bronze.png",
+            "zero": "src/assets/badges/sports_zero.png"
         },
         "Geography": {
             "color": "#0066FF",
             "code": 22,
-            "badge": "src/assets/badges/geography_icon.png"
+            "gold": "src/assets/badges/geography_gold.png",
+            "silver": "src/assets/badges/geography_silver.png",
+            "bronze": "src/assets/badges/geography_bronze.png",
+            "zero": "src/assets/badges/geography_zero.png"
         },
         "History": {
             "color": "#FF9933",
             "code": 23,
-            "badge": "src/assets/badges/history_icon.png"
+            "gold": "src/assets/badges/history_gold.png",
+            "silver": "src/assets/badges/history_silver.png",
+            "bronze": "src/assets/badges/history_bronze.png",
+            "zero": "src/assets/badges/history_zero.png"
         },
         "Politics": {
             "color": "#CC0000",
             "code": 24,
-            "badge": "src/assets/badges/politics_icon.png"
+            "gold": "src/assets/badges/politics_gold.png",
+            "silver": "src/assets/badges/politics_silver.png",
+            "bronze": "src/assets/badges/politics_bronze.png",
+            "zero": "src/assets/badges/politics_zero.png"
         },
         "Animals": {
             "color": "#9933CC",
             "code": 27,
-            "badge": "src/assets/badges/animals_icon.png"
+            "gold": "src/assets/badges/animals_gold.png",
+            "silver": "src/assets/badges/animals_silver.png",
+            "bronze": "src/assets/badges/animals_bronze.png",
+            "zero": "src/assets/badges/animals_zero.png"
         },
         "Vehicles": {
             "color": "#FF66B2",
             "code": 28,
-            "badge": "src/assets/badges/vehicles_icon.png"
+            "gold": "src/assets/badges/vehicles_gold.png",
+            "silver": "src/assets/badges/vehicles_silver.png",
+            "bronze": "src/assets/badges/vehicles_bronze.png",
+            "zero": "src/assets/badges/vehicles_zero.png"
         }
     }
 }
