@@ -5,7 +5,6 @@ import XPBar from '../XPBar/XPBar';
 import EditMotto from '../EditMotto/EditMotto';
 import ProPicUpload from '../ProPicUpload/ProPicUpload';
 import ProfileStats from '../ProfileStats/ProfileStats';
-import ProfileHL from '../ProfileHL/ProfileHL';
 import Badges from '../Badges/Badges';
 
 export default function Profile({ user }) {
@@ -62,10 +61,10 @@ export default function Profile({ user }) {
                         <p className='ProfileMotto'>{account.motto}</p>
                     </div>
                 </div>
-                {/* <ProfileHL categories={account.categories} /> */}
-                <Badges account={account} />
-                <XPBar xp={account.xp} level={account.level} />
                 <ProfileStats categories={account.categories} />
+                <Badges account={account} />
+                {/* <XPBar xp={account.xp} level={account.level} /> */}
+
             </div>
         )
     );

@@ -1,5 +1,4 @@
 .Badges {
-    margin: 1rem;
     width: 60%;
     border: 1px solid black;
     display: flex;
@@ -9,6 +8,8 @@
     box-shadow: 0 4px 8px #000000;
     padding: 1rem;
     background-color: rgba(255, 255, 255, 0.2);
+    border-radius: .2rem;
+    margin-bottom: 1rem;
 }
 
 

@@ -1,55 +1,17 @@
-.Test {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    background-color: lightblue;
-}
-
-.Red {
-    width: 30rem;
-    height: 30rem;
-    background-color: red;
-}
-
-.Blue {
-    width: 30rem;
+.Box {
+    margin: 1rem;
+    width: 50%;
+    color: white;
+    text-align: center;
     height: 30rem;
     background-color: blue;
 }
 
-.Green {
-    width: 30rem;
-    height: 30rem;
-    background-color: Green;
-}
 
-
-
-.Back {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.5);
-    opacity: 0;
-    transition: opacity 1s ease;
-}
-
-.Back:hover {
-    opacity: 1;
-}
-
-.Box {
-    margin-top: 10rem;
+.BoxBtn {
+    margin-top: 1rem;
+    width: 50%;
+    color: white;
     text-align: center;
-    width: 20rem;
-    height: 20rem;
-    background-color: white;
-    transition: background 6s ease;
+    background-color: green;
 }
