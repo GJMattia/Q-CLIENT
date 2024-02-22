@@ -1,5 +1,5 @@
 import './Play.css';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { getAccount } from '../../../utilities/accounts-api';
 import PlaySettings from '../PlaySettings/PlaySettings';
 import Quiz from '../Quiz/Quiz';
@@ -34,7 +34,7 @@ export default function Play({ user }) {
         account && (
             <div className='Play'>
                 <MusicPlayer song={song} />
-                {/* <XPBar xp={account.xp} level={account.level} /> */}
+                <XPBar xp={account.xp} level={account.level} />
                 {settings && <PlaySettings setQuestionSet={setQuestionSet} setSettings={setSettings} setSong={setSong} />}
                 {questionSet && <Quiz questionSet={questionSet} setQuestionSet={setQuestionSet} setAccount={setAccount} setResults={setResults} setScore={setScore} score={score} />}
                 {results && <Results score={score} />}

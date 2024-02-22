@@ -22,7 +22,9 @@ export default function ProPicUpload({ setAccount, pic, setPic }) {
             formData.append('profilePicture', selectedFile);
 
             try {
-                const response = await axios.post('http://localhost:4741/upload', formData, {
+                const LIVE = 'https://q-api.onrender.com/upload';
+                const LOCAL = 'http://localhost:4741/upload'
+                const response = await axios.post(LIVE, formData, {
                     headers: {
                         'Content-Type': 'multipart/form-data',
                     },
