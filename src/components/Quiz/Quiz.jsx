@@ -5,14 +5,15 @@ import Correct from '../../assets/audio/correct.mp3';
 import Wrong from '../../assets/audio/wrong.mp3';
 import Categories from '../../assets/data/categories.json';
 
-export default function Quiz({ questionSet, setQuestionSet, setAccount, setResults, setScore, score }) {
+export default function Quiz({ questionSet, setQuestionSet, setAccount, setResults, setScore, score, account }) {
 
     //State Variables
-    const [question, setQuestion] = useState(0);
+    const [question, setQuestion] = useState(1);
     const [answers, setAnswers] = useState([]);
     const [choice, setChoice] = useState(null);
     const [next, setNext] = useState(true);
     const [color, setColor] = useState(Categories.categories[parseCategory(questionSet[0].category)].quiz);
+    const [mult, setMult] = useState(1);
 
     //Auto Shuffle when the question variable is changed.
     useEffect(shuffleAnswers, [question, questionSet]);
@@ -75,17 +76,18 @@ export default function Quiz({ questionSet, setQuestionSet, setAccount, setResul
         };
 
         event.target.classList.add('SelectedAnswer');
-        setChoice(event.target.innerText);
+        setChoice(Decode(event.target.innerText));
 
     };
 
     //Submitting answer
     function handleConfirm() {
-        if (choice === questionSet[question].correct_answer) {
+        let earned = xpCalc(questionSet[question].difficulty);
+        if (choice === Decode(questionSet[question].correct_answer)) {
             playSound(Correct);
             addXp();
             submitAnswer(1);
-            setScore([...score, `Question ${question}: Correct, +5xp`])
+            setScore([...score, `Question ${question}: Correct, +${earned}xp`]);
         } else {
             playSound(Wrong);
             submitAnswer(0);
@@ -99,7 +101,7 @@ export default function Quiz({ questionSet, setQuestionSet, setAccount, setResul
     function showAnswers() {
         let answerElements = document.querySelectorAll('.Answer');
         for (let i = 0; i < answerElements.length; i++) {
-            if (answerElements[i].innerText === questionSet[question].correct_answer) {
+            if (Decode(answerElements[i].innerText) === Decode(questionSet[question].correct_answer)) {
                 answerElements[i].id = 'Correct'
             } else {
                 answerElements[i].id = 'Incorrect'
@@ -134,11 +136,11 @@ export default function Quiz({ questionSet, setQuestionSet, setAccount, setResul
     function xpCalc(string) {
         switch (string) {
             case 'easy':
-                return 5;
+                return 5 * mult;
             case 'medium':
-                return 10;
+                return 10 * mult;
             case 'hard':
-                return 15;
+                return 15 * mult;
         }
     }
 
@@ -147,6 +149,7 @@ export default function Quiz({ questionSet, setQuestionSet, setAccount, setResul
         try {
             const response = await accountAPI.addXp({ xp: earned });
             setAccount(response);
+            setMult(1);
         } catch (error) {
             console.error('Error Awarding XP'.error)
         }
@@ -161,9 +164,53 @@ export default function Quiz({ questionSet, setQuestionSet, setAccount, setResul
         }
     };
 
+    async function usePowerup(powerup) {
+        try {
+            let response = await accountAPI.usePowerup({ powerup: powerup, });
+            setAccount(response);
+        } catch (error) {
+            console.error('Error using powerup'.error)
+        }
+    };
+
+    function skip() {
+        if (question === questionSet.length - 1) {
+            setResults(true);
+            setQuestionSet(null);
+        };
+        const selectedAnswer = document.querySelector('.SelectedAnswer');
+        if (selectedAnswer) {
+            selectedAnswer.classList.remove('SelectedAnswer');
+        };
+        setChoice(null);
+        setQuestion(question + 1);
+        setScore([...score, `Question ${question}: SKIPPED`]);
+        usePowerup('skip')
+    };
+
+    function quad() {
+        setMult(4);
+        usePowerup('quad');
+    };
+
+    function minus() {
+        let remove = Decode(questionSet[question].incorrect_answers[getRandomNumber()]);
+
+        let answerElements = document.querySelectorAll('.Answer');
+
+        for (let i = 0; i < answerElements.length; i++) {
+            if (answerElements[i].innerText === remove) {
+                answerElements[i].id = 'Minus'
+            };
+        };
+        usePowerup('minus')
+    };
+
+    function getRandomNumber() { return Math.floor(Math.random() * 3); }
+
     return (
         <div style={{ background: color }} className='QuizContainer'>
-            <div style={{ background: dLevelColor(questionSet[question].difficulty) }} className='Dlevel'>{questionSet[question].difficulty}</div>
+
             <div className='QuestionContainer'>
                 <div className='QuestionNumber'>{question + 1}/ {questionSet.length}</div>
                 <div className='QuestionText'>{Decode(questionSet[question].question)}</div>
@@ -176,8 +223,22 @@ export default function Quiz({ questionSet, setQuestionSet, setAccount, setResul
                 <div onClick={handleChoice} className='Answer'>{Decode(answers[3])}</div>
             </div>
 
+            <div style={{ background: dLevelColor(questionSet[question].difficulty) }} className='Dlevel'>{questionSet[question].difficulty}</div>
+            <div className={`Powerups ${!next ? 'Forbidden' : ''}`}>
+                <div className='Powerup'>
+                    <p>{account.powerups.skip}</p>
+                    <button onClick={skip}>Skip</button>
+                </div>
+                <div className='Powerup'>
+                    <p>{account.powerups.quad}</p>
+                    <button onClick={quad}>x4</button>
+                </div>
+                <div className='Powerup'>
+                    <p>{account.powerups.minus}</p>
+                    <button onClick={minus}>-1</button>
+                </div>
+            </div>
             <button onClick={next ? handleConfirm : nextQuestion} className='Confirm'>{next ? 'Confirm' : 'Next'}</button>
-
         </div>
     )
 };

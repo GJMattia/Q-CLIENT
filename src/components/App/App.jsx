@@ -16,7 +16,6 @@ export default function App() {
   const [log, setLog] = useState(false);
   const [logType, setLogType] = useState(0);
 
-
   return (
     <div className='App'>
       {user ?

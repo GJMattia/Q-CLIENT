@@ -16,12 +16,12 @@
     justify-content: center;
     align-items: center;
     width: 10%;
-    height: 5%;
+    height: 8%;
     position: absolute;
     background-color: white;
     box-shadow: 0 0 10px rgb(0, 0, 0);
-    bottom: 5%;
-    left: 2%;
+    bottom: 2%;
+    left: 1%;
     border-radius: .2rem;
 }
 
@@ -117,4 +117,57 @@
 #Incorrect {
     pointer-events: none;
     background-color: rgba(255, 0, 0, 0.8);
+}
+
+#Minus {
+    pointer-events: none;
+    background-color: rgba(0, 255, 157, 0.8);
+}
+
+.Powerups {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 20%;
+    height: 15%;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+    bottom: 2%;
+    right: 1%;
+    border-radius: .2rem;
+}
+
+.Forbidden {
+    background-color: red;
+    pointer-events: none;
+}
+
+.Powerup {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 27%;
+    height: 90%;
+
+}
+
+.Powerup>button {
+    border: 0;
+    cursor: pointer;
+    width: 100%;
+    margin: 0;
+    height: 2rem;
+}
+
+.Powerup>p {
+    margin: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.Powerup>button:hover {
+    color: white;
+    background-color: dodgerblue;
 }

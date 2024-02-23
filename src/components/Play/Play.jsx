@@ -36,7 +36,7 @@ export default function Play({ user }) {
                 <MusicPlayer song={song} />
                 <XPBar xp={account.xp} level={account.level} />
                 {settings && <PlaySettings setQuestionSet={setQuestionSet} setSettings={setSettings} setSong={setSong} />}
-                {questionSet && <Quiz questionSet={questionSet} setQuestionSet={setQuestionSet} setAccount={setAccount} setResults={setResults} setScore={setScore} score={score} />}
+                {questionSet && <Quiz questionSet={questionSet} setQuestionSet={setQuestionSet} account={account} setAccount={setAccount} setResults={setResults} setScore={setScore} score={score} />}
                 {results && <Results score={score} />}
             </div>
         )

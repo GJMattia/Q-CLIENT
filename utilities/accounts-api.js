@@ -28,6 +28,9 @@ export async function addXp(xp) {
 }
 
 export async function submitAnswer(status) {
-    console.log('my name is grizworld', status);
     return sendRequest(`${BASE_URL}/stats`, 'PUT', status);
+}
+
+export async function usePowerup(powerup) {
+    return sendRequest(`${BASE_URL}/powerups`, 'PUT', powerup);
 }
