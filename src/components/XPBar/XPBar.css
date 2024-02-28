@@ -1,14 +1,33 @@
-.XPBar {
-    border: 2px solid black;
-    width: 30%;
-    height: 2rem;
+.Bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin-top: 5.5rem;
+    position: relative;
+}
 
+.Bar>p {
+    margin: .5rem;
+}
+
+
+.XPBar {
+    border: 1px solid black;
+    width: 30%;
+    height: 1.5rem;
+    border-radius: .2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+    background-color: rgb(240, 240, 240);
+    position: relative;
 }
 
 .Meter {
+    border-radius: .2rem;
     height: 100%;
     width: 0;
-    background: linear-gradient(90deg, rgb(64, 255, 30), rgba(255, 255, 255, 0.2));
+    background: linear-gradient(90deg, rgb(64, 255, 30), rgba(255, 255, 255, 0.9));
     background-size: 200% 100%;
     animation: gradientAnimation 2s linear infinite;
     transition: width 0.5s ease;

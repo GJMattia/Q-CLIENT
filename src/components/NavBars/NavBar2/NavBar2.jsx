@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import * as userService from '../../../../utilities/user-services';
 import './NavBar2.css'
 

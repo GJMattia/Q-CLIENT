@@ -8,7 +8,7 @@ import Categories from '../../assets/data/categories.json';
 export default function Quiz({ questionSet, setQuestionSet, setAccount, setResults, setScore, score, account }) {
 
     //State Variables
-    const [question, setQuestion] = useState(1);
+    const [question, setQuestion] = useState(0);
     const [answers, setAnswers] = useState([]);
     const [choice, setChoice] = useState(null);
     const [next, setNext] = useState(true);
@@ -87,11 +87,11 @@ export default function Quiz({ questionSet, setQuestionSet, setAccount, setResul
             playSound(Correct);
             addXp();
             submitAnswer(1);
-            setScore([...score, `Question ${question}: Correct, +${earned}xp`]);
+            setScore([...score, `Question ${question + 1}: Correct, +${earned}xp`]);
         } else {
             playSound(Wrong);
             submitAnswer(0);
-            setScore([...score, `Question ${question}: Incorrect`])
+            setScore([...score, `Question ${question + 1}: Incorrect`])
         }
         showAnswers();
         setNext(!next);
@@ -210,7 +210,6 @@ export default function Quiz({ questionSet, setQuestionSet, setAccount, setResul
 
     return (
         <div style={{ background: color }} className='QuizContainer'>
-
             <div className='QuestionContainer'>
                 <div className='QuestionNumber'>{question + 1}/ {questionSet.length}</div>
                 <div className='QuestionText'>{Decode(questionSet[question].question)}</div>

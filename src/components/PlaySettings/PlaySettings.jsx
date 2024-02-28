@@ -50,30 +50,35 @@ export default function PlaySettings({ setQuestionSet, setSettings, setSong }) {
 
     return (
         <div className='PlaySettings'>
-            <h1>How many questions?</h1>
-            <div className='Amount'>
-                <button onClick={() => handleAmountClick(5)} className={`Five ${amount === 5 ? 'Selected' : ''}`}>5</button>
-                <button onClick={() => handleAmountClick(10)} className={`Ten ${amount === 10 ? 'Selected' : ''}`}>10</button>
-            </div>
-            <h1>Choose your difficulty</h1>
-            <div className='Difficulty'>
-                <button onClick={() => handleDifficultyClick('easy')} className={`Easy ${difficulty === 'easy' ? 'Selected' : ''}`}>Easy</button>
-                <button onClick={() => handleDifficultyClick('medium')} className={`Medium ${difficulty === 'medium' ? 'Selected' : ''}`}>Medium</button>
-                <button onClick={() => handleDifficultyClick('hard')} className={`Hard ${difficulty === 'hard' ? 'Selected' : ''}`}>Hard</button>
+            <h1 className='PlayTitle'>Select options & begin</h1>
+            <div className='DaBox'>
+                <div className='Amount'>
+                    <h4 className='TopTitle'>Question Amount</h4>
+                    <button onClick={() => handleAmountClick(5)} className={`Five ${amount === 5 ? 'Selected' : ''}`}>5</button>
+                    <button onClick={() => handleAmountClick(10)} className={`Ten ${amount === 10 ? 'Selected' : ''}`}>10</button>
+                </div>
+                <div className='Difficulty'>
+                    <h4 className='TopTitle'>Difficulty</h4>
+                    <button onClick={() => handleDifficultyClick('easy')} className={`Easy ${difficulty === 'easy' ? 'Selected' : ''}`}>Easy</button>
+                    <button onClick={() => handleDifficultyClick('medium')} className={`Medium ${difficulty === 'medium' ? 'Selected' : ''}`}>Medium</button>
+                    <button onClick={() => handleDifficultyClick('hard')} className={`Hard ${difficulty === 'hard' ? 'Selected' : ''}`}>Hard</button>
 
+                </div>
             </div>
-            <h1>Pick your category</h1>
             <div className='Categories'>
-                {Object.entries(CategoriesData.categories).map(([category, properties]) => (
-                    <button
-                        key={category}
-                        onClick={() => handleCategoryClick(category)}
-                        style={{ background: properties.color }}
-                        className={`CategoryBtn ${selectedCategory === properties.code ? 'Selected' : ''}`}
-                    >
-                        {category}
-                    </button>
-                ))}
+                <h4 className='TopTitle'>Category</h4>
+                <div className='Categorys'>
+                    {Object.entries(CategoriesData.categories).map(([category, properties]) => (
+                        <button
+                            key={category}
+                            onClick={() => handleCategoryClick(category)}
+                            style={{ background: properties.color }}
+                            className={`CategoryBtn ${selectedCategory === properties.code ? 'Selected' : ''}`}
+                        >
+                            {category}
+                        </button>
+                    ))}
+                </div>
             </div>
             <button className='Begin' onClick={getExternalQuestions}>BEGIN</button>
         </div>

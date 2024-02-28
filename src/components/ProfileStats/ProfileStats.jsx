@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 export default function ProfileStats({ categories }) {
 
-    const [stats, setStats] = useState(true);
+    const [stats, setStats] = useState(false);
 
     function toggleStats() {
         setStats(!stats)

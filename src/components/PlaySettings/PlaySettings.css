@@ -4,34 +4,87 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    backdrop-filter: blur(10px);
-    background-color: rgba(0, 0, 0, 0.2);
+    user-select: none;
 }
 
 .Selected {
     animation: pulse 1s infinite;
 }
 
+.PlayTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    height: 4rem;
+    position: absolute;
+    top: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 1.5rem;
+    margin: .5rem;
+}
+
+
+.DaBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+}
+
 /* Question Amount  */
+
+.Amount {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    position: relative;
+    margin: 2rem;
+    height: 16rem;
+    width: 40%;
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+    border-radius: .2rem;
+}
+
+.TopTitle {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: dodgerblue;
+    width: 100%;
+    text-align: center;
+    height: 3rem;
+    position: absolute;
+    top: 0;
+}
+
 .Amount>button {
+    margin-top: 2rem;
     font-size: 1.3rem;
     position: relative;
     width: 10rem;
     height: 3rem;
     cursor: pointer;
     border: none;
-    margin: 1rem;
-    box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.5);
 }
 
 .Five {
     color: white;
-    background-color: dodgerblue;
+    background-color: rgb(30, 218, 255);
 }
 
 .Ten {
     color: white;
-    background-color: darkblue;
+    background-color: rgb(0, 16, 116);
 }
 
 .Amount>button:hover {
@@ -39,35 +92,49 @@
 }
 
 
-
 /* Difficulty */
-.Difficulty>button {
-    font-size: 1.3rem;
+
+.Difficulty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
     position: relative;
-    width: 10rem;
-    height: 5rem;
+    margin: 2rem;
+    height: 16rem;
+    width: 40%;
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+    border-radius: .2rem;
+}
+
+.Difficulty>button {
+    font-size: 1.2rem;
+    position: relative;
+    width: 80%;
+    height: 2.5rem;
     cursor: pointer;
-    transition: all 0.3s ease;
-    line-height: 40px;
-    padding: 0;
     border: none;
     font-weight: 900;
-    margin: 1rem;
-    box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.5);
-    border-radius: .2rem;
     color: black;
+    margin-bottom: 1rem;
 }
 
 .Easy {
-    background-color: lawngreen;
+    margin-top: 4rem;
+    background-color: #00eb00;
+    /* Muted green */
 }
 
 .Medium {
-    background-color: yellow;
+    background-color: #ffff00;
+    /* Muted yellow */
 }
 
 .Hard {
-    background-color: red;
+    background-color: #b60000;
+    /* Muted red */
 }
 
 .Difficulty>button:hover {
@@ -80,28 +147,35 @@
 .Categories {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    justify-content: center;
     width: 50%;
-    padding: 1rem;
-    box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.5);
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+    border-radius: .2rem;
+}
+
+.Categorys {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 4rem;
+    margin-bottom: 1rem;
 }
 
 .CategoryBtn {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     position: relative;
-    width: 20%;
-    height: 4rem;
+    width: 15%;
+    height: 3rem;
     cursor: pointer;
-    transition: all 0.3s ease;
-    line-height: 40px;
-    padding: 0;
     border: none;
-    font-weight: 900;
+    font-weight: 600;
+    border-radius: .2rem;
+    color: rgb(0, 0, 0);
     margin: 1rem;
-    box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.5);
-    border-radius: .3rem;
-    color: black;
 }
 
 .CategoryBtn:hover {
@@ -110,19 +184,19 @@
 
 /* Begin Button */
 .Begin {
-    margin: 5rem;
-    font-size: 1.3rem;
-    position: relative;
-    width: 50%;
-    height: 3rem;
-    cursor: pointer;
-    border: none;
-    box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.5);
-    background-color: dodgerblue;
+    width: 70%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 0;
     color: white;
+    height: 4rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background 0.30s ease;
+    margin: 2rem;
 }
 
 .Begin:hover {
-    animation: pulse .3s infinite;
-    background-color: darkblue;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.8);
 }
