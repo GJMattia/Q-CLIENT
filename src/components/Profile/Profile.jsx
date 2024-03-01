@@ -19,7 +19,7 @@ export default function Profile({ user }) {
                 const account = await getAccount({ user: user._id });
                 setAccount(account);
             } catch (error) {
-                console.error('Error Fetching Questions', error);
+                console.error('Error Fetching Account', error);
             }
         }
         getAccount2();
