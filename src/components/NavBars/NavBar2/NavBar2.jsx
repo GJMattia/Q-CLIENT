@@ -10,7 +10,7 @@ export default function NavBarTwo({ user, setUser }) {
 
   return (
     <div className='NavBar2'>
-      <h1 className='WebsiteTitle'>Sauce</h1>
+      <h1 className='WebsiteTitle'>Quiz Kingpin</h1>
       <ul className='Nav2List'>
         <li> <Link to='/play'>Play</Link></li>
         <li><Link to='/'>Profile</Link></li>

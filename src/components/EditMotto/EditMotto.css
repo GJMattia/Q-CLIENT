@@ -17,7 +17,7 @@
 }
 
 .EditMotto {
-    margin-top: 10rem;
+    margin-top: 6rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -91,4 +91,18 @@
 
 .MottoBtnBox>button:nth-child(2):hover {
     background-color: rgb(0, 166, 255);
+}
+
+@media (max-width: 1000px) {
+
+    .EditMotto {
+        margin-top: 4rem;
+        width: 95%;
+    }
+
+    .MottoBtnBox>button {
+        width: 40%;
+
+    }
+
 }

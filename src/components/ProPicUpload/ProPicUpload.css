@@ -92,5 +92,26 @@
     font-size: 1.3rem;
     border-radius: .2rem;
     cursor: pointer;
+}
 
+@media (max-width: 1000px) {
+
+    .EditPic {
+        margin-top: 4rem;
+        width: 95%;
+    }
+
+    .PicBtnBox>button {
+        width: 40%;
+
+    }
+
+    .ChoosePic {
+        width: 90%;
+    }
+
+    .EditPic>h1 {
+        font-size: 1.5rem;
+
+    }
 }

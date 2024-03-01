@@ -111,3 +111,26 @@ tbody tr:hover {
         /* Back to Red */
     }
 }
+
+@media (max-width: 1000px) {
+
+
+    .StatsBtn {
+        width: 95%;
+    }
+
+    .StatsTable {
+        width: 95%;
+
+    }
+
+    th {
+        font-size: 1rem;
+        padding: .5rem;
+    }
+
+    td {
+        padding: .8rem;
+    }
+
+}

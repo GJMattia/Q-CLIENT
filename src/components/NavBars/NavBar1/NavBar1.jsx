@@ -18,9 +18,7 @@ export default function NavBar1({ log, setLog, setLogType }) {
 
     return (
         <div className='NavBar1'>
-
-            <h1 className='WebsiteTitle'>Sauce</h1>
-
+            <h1 className='WebsiteTitle'>Quiz Kingpin</h1>
             <div className='Btn-Log-Container'>
                 <button className='Log-Btn' onClick={toggleSignIn}>
                     Sign In

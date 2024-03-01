@@ -19,7 +19,6 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
 }
 
 .Badges:hover {
@@ -42,4 +41,26 @@
 
 .Icon {
     width: 5rem;
+}
+
+
+@media (max-width: 1500px) {
+
+    .Badges {
+        width: 70%;
+    }
+
+}
+
+@media (max-width: 1000px) {
+
+    .Badges {
+        justify-content: space-between;
+        width: 85%;
+    }
+
+    .Icon {
+        width: 5rem;
+    }
+
 }

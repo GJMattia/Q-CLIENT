@@ -3,24 +3,28 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    width: 100%;
-    margin-top: 5.5rem;
+    width: 80%;
     position: relative;
+    border-bottom: 1px solid rgb(155, 155, 155);
 }
 
 .Bar>p {
-    margin: .5rem;
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+    font-weight: 900;
+    font-size: 2rem;
 }
 
 
 .XPBar {
     border: 1px solid black;
-    width: 30%;
+    width: 60%;
     height: 1.5rem;
     border-radius: .2rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
     background-color: rgb(240, 240, 240);
     position: relative;
+    margin-bottom: 1.5rem;
 }
 
 .Meter {

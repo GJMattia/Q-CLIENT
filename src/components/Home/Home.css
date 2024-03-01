@@ -9,6 +9,30 @@
     user-select: none;
 }
 
+.Warning {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    background-color: crimson;
+    color: white;
+}
+
+.Warning>button {
+    border: 0;
+    margin-bottom: 1rem;
+    width: 15%;
+    height: 2rem;
+    cursor: pointer;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    font-weight: 900;
+}
+
+.Warning>button:hover {
+    background-color: white;
+    color: black;
+}
 
 .BlueSpikes {
     height: 10rem;

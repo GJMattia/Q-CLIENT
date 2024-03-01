@@ -110,6 +110,7 @@
 }
 
 .SocialMedia>h1 {
+    text-align: center;
     margin-bottom: 3rem;
     color: rgb(47, 47, 47);
 }
@@ -125,11 +126,15 @@
     .LogBox {
         width: 60%;
     }
+
+    .SocialMedia>h1 {
+        font-size: 1.5rem;
+    }
 }
 
 @media (max-width: 1000px) {
 
     .LogBox {
-        width: 85%;
+        width: 95%;
     }
 }

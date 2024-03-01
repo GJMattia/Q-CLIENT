@@ -12,7 +12,7 @@ export default function Quiz({ questionSet, setQuestionSet, setAccount, setResul
     const [answers, setAnswers] = useState([]);
     const [choice, setChoice] = useState(null);
     const [next, setNext] = useState(true);
-    const [color, setColor] = useState(Categories.categories[parseCategory(questionSet[0].category)].quiz);
+    const [color, setColor] = useState(Categories.categories[parseCategory(questionSet[0].category)].color);
     const [mult, setMult] = useState(1);
 
     //Auto Shuffle when the question variable is changed.
@@ -209,20 +209,24 @@ export default function Quiz({ questionSet, setQuestionSet, setAccount, setResul
     function getRandomNumber() { return Math.floor(Math.random() * 3); }
 
     return (
-        <div style={{ background: color }} className='QuizContainer'>
-            <div className='QuestionContainer'>
-                <div className='QuestionNumber'>{question + 1}/ {questionSet.length}</div>
-                <div className='QuestionText'>{Decode(questionSet[question].question)}</div>
-            </div>
+        <>
+            <div className='QuizContainer'>
+                <div className='QuestionContainer'>
+                    <div className='QuestionNumber'>{question + 1}/ {questionSet.length}</div>
+                    <div className='QuestionText'>{Decode(questionSet[question].question)}</div>
+                </div>
 
-            <div className='Answers'>
-                <div onClick={handleChoice} className='Answer'>{Decode(answers[0])}</div>
-                <div onClick={handleChoice} className='Answer'>{Decode(answers[1])}</div>
-                <div onClick={handleChoice} className='Answer'>{Decode(answers[2])}</div>
-                <div onClick={handleChoice} className='Answer'>{Decode(answers[3])}</div>
-            </div>
+                <div className='Answers'>
+                    <div onClick={handleChoice} className='Answer'>{Decode(answers[0])}</div>
+                    <div onClick={handleChoice} className='Answer'>{Decode(answers[1])}</div>
+                    <div onClick={handleChoice} className='Answer'>{Decode(answers[2])}</div>
+                    <div onClick={handleChoice} className='Answer'>{Decode(answers[3])}</div>
+                </div>
 
-            <div style={{ background: dLevelColor(questionSet[question].difficulty) }} className='Dlevel'>{questionSet[question].difficulty}</div>
+                <div style={{ background: dLevelColor(questionSet[question].difficulty) }} className='Dlevel'>{questionSet[question].difficulty}</div>
+                <div style={{ background: color }} className='CategoryName'>Category: {parseCategory2(parseCategory(questionSet[0].category))}</div>
+                <button onClick={next ? handleConfirm : nextQuestion} className='Confirm'>{next ? 'Confirm' : 'Next'}</button>
+            </div>
             <div className={`Powerups ${!next ? 'Forbidden' : ''}`}>
                 <div className='Powerup'>
                     <p>{account.powerups.skip}</p>
@@ -237,7 +241,6 @@ export default function Quiz({ questionSet, setQuestionSet, setAccount, setResul
                     <button onClick={minus}>-1</button>
                 </div>
             </div>
-            <button onClick={next ? handleConfirm : nextQuestion} className='Confirm'>{next ? 'Confirm' : 'Next'}</button>
-        </div>
+        </>
     )
 };

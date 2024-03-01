@@ -3,9 +3,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 50%;
+    width: 100%;
     user-select: none;
-    margin-top: 6rem;
 }
 
 .ResultsList {
@@ -13,17 +12,20 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 40%;
+    width: 30%;
     color: white;
     padding: 0;
     list-style: none;
-    background-color: rgba(0, 0, 0, 0.7);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
     border-radius: .2rem;
+    background: linear-gradient(315deg, rgb(89, 0, 255) 3%, rgb(0, 26, 23) 38%, rgba(2, 171, 245, 1) 68%, rgb(255, 4, 0) 98%);
+    animation: gradient 40s ease infinite;
+    background-size: 400% 400%;
+    background-attachment: fixed;
 }
 
 .ResultItem {
-    margin: 2rem;
+    margin: 1.5rem;
     opacity: 0;
     transform: translateX(50px);
     animation: fadeInRight 0.5s ease-out forwards;
@@ -77,5 +79,20 @@
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@media (max-width: 1000px) {
+
+    .ResultsList {
+        width: 95%;
+    }
+
+    .PostOptions {
+        width: 95%;
+    }
+
+    .PostOptions>a {
+        font-size: 1rem;
     }
 }

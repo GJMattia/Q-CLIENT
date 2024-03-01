@@ -4,11 +4,15 @@
     justify-content: flex-start;
     flex-direction: column;
     width: 90%;
-    margin: 5rem;
+    margin: 1rem;
     padding: 1rem;
     box-shadow: 0 0 10px rgb(0, 0, 0);
     backdrop-filter: blur(5px);
     user-select: none;
+    background: linear-gradient(315deg, rgb(89, 0, 255) 3%, rgb(0, 255, 229) 38%, rgba(2, 171, 245, 1) 68%, rgb(255, 4, 0) 98%);
+    animation: gradient 40s ease infinite;
+    background-size: 400% 400%;
+    background-attachment: fixed;
 }
 
 .Dlevel {
@@ -19,10 +23,23 @@
     height: 8%;
     position: absolute;
     background-color: white;
-    box-shadow: 0 0 10px rgb(0, 0, 0);
     bottom: 2%;
     left: 1%;
     border-radius: .2rem;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+}
+
+.CategoryName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+    height: 8%;
+    position: absolute;
+    bottom: 2%;
+    right: 1%;
+    border-radius: .2rem;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
 }
 
 .QuestionContainer {
@@ -100,7 +117,9 @@
 }
 
 .Confirm:hover {
-    background-color: rgba(30, 144, 255, 0.8);
+    border: 1px solid black;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 .SelectedAnswer {
@@ -121,21 +140,20 @@
 
 #Minus {
     pointer-events: none;
-    background-color: rgba(0, 255, 157, 0.8);
+    background-color: rgba(193, 24, 24, 0.8);
 }
 
 .Powerups {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 20%;
+    width: 80%;
     height: 15%;
-    position: absolute;
     background-color: white;
-    box-shadow: 0 0 10px rgb(0, 0, 0);
-    bottom: 2%;
-    right: 1%;
     border-radius: .2rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 1px solid black;
 }
 
 .Forbidden {
@@ -170,4 +188,40 @@
 .Powerup>button:hover {
     color: white;
     background-color: dodgerblue;
+}
+
+@media (max-width: 1000px) {
+
+    .Dlevel {
+        display: none;
+    }
+
+
+    .CategoryName {
+        display: none;
+    }
+
+    .QuestionContainer {
+        justify-content: center;
+        width: 95%;
+    }
+
+    .QuestionNumber {
+        display: none;
+    }
+
+    .QuestionText {
+        font-size: 1.2rem;
+    }
+
+
+    .Answer {
+        width: 95%;
+        font-size: 1.2rem;
+    }
+
+    .Confirm {
+        width: 95%;
+    }
+
 }

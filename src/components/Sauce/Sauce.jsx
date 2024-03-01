@@ -11,12 +11,12 @@ export default function Sauce() {
     return (
         <>
             <button onClick={toggle} className='BoxBtn'>
-                Hey
+                Test Page
             </button>
 
             {test &&
                 <div className={`Box ${test ? 'slop' : ''}`}>
-                    WOW LOOK
+                    Test Page
                 </div>
             }
         </>
