@@ -4,6 +4,7 @@ import * as accountAPI from '../../../utilities/accounts-api';
 import Correct from '../../assets/audio/correct.mp3';
 import Wrong from '../../assets/audio/wrong.mp3';
 import Categories from '../../assets/data/categories.json';
+import Select from '../../assets/audio/select.mp3';
 
 export default function Quiz({ questionSet, setQuestionSet, setAccount, setResults, setScore, score, account }) {
 
@@ -70,6 +71,7 @@ export default function Quiz({ questionSet, setQuestionSet, setAccount, setResul
 
     //Choosing an answer
     function handleChoice(event) {
+        playSound(Select);
         const selectedAnswer = document.querySelector('.SelectedAnswer');
         if (selectedAnswer) {
             selectedAnswer.classList.remove('SelectedAnswer');

@@ -33,7 +33,6 @@ export default function Play({ user }) {
     return (
         account && (
             <div className='Play'>
-                <MusicPlayer song={song} />
                 {settings && <PlaySettings setQuestionSet={setQuestionSet} setSettings={setSettings} setSong={setSong} />}
                 {questionSet &&
                     <>
@@ -42,6 +41,7 @@ export default function Play({ user }) {
                     </>
                 }
                 {results && <Results score={score} />}
+                <MusicPlayer song={song} />
             </div>
         )
     )

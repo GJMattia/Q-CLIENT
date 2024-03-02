@@ -23,7 +23,7 @@ export default function Home({ setUser, log, setLog, logType, setLogType }) {
             <div className='Home'>
                 {warning && (
                     <div className='Warning'>
-                        <p>Reminder: This website is on a free service, so the server may take up to 5 minutes to boot up on first use!</p>
+                        <p>Reminder: This website is hosted on a free service, so the server may take up to 5 minutes to boot up on first use!</p>
                         <button onClick={toggleWarning} >Okay</button>
                     </div>
                 )}

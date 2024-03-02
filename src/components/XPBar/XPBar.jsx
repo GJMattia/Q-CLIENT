@@ -4,7 +4,9 @@ export default function XPBar({ xp, level }) {
 
     return (
         <div className='Bar'>
-            <p className='Username'> Level {level}</p>
+            <div className='LevelBox'>
+                <p className='Username'> Level {level}</p>
+            </div>
             <div className='XPBar'>
                 <div className='Meter' style={{ width: `${xp}%` }}></div>
             </div>

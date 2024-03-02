@@ -8,7 +8,6 @@ export default function MusicPlayer({ song }) {
 
     //State Variables
     const [isPlaying, setIsPlaying] = useState(false);
-    const [volume, setVolume] = useState(0.5);
 
     const songFolder = 'src/assets/music';
 
@@ -24,13 +23,6 @@ export default function MusicPlayer({ song }) {
         }
     };
 
-    const handleVolumeChange = (e) => {
-        const newVolume = parseFloat(e.target.value);
-        setVolume(newVolume);
-        if (music.current) {
-            music.current.volume = newVolume;
-        }
-    };
 
     const playSong = () => {
         if (music.current) {
@@ -47,15 +39,7 @@ export default function MusicPlayer({ song }) {
     return (
         <div className='MusicPlayer'>
             <audio ref={music} />
-            <button onClick={playPauseToggle}>{isPlaying ? '⏸️' : '▶️'}</button>
-            <input
-                type="range"
-                min="0"
-                max="1"
-                step="0.01"
-                value={volume}
-                onChange={handleVolumeChange}
-            />
+            <button onClick={playPauseToggle}>{isPlaying ? 'Turn off Music' : 'Turn On Music'}</button>
         </div>
     );
 };
