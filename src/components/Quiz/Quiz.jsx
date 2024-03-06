@@ -10,7 +10,7 @@ import Skip from '../../assets/pictures/skip.webp';
 import x4 from '../../assets/pictures/x4.webp';
 import MinusSound from '../../assets/audio/Minus.mp3';
 import QuadSound from '../../assets/audio/Quad.mp3';
-import SkipSound from '../../assets/audio/skip.mp3'
+import SkipSound from '../../assets/audio/Skip.mp3'
 
 export default function Quiz({ questionSet, setQuestionSet, setAccount, setResults, setScore, score, account }) {
 
