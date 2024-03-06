@@ -1,0 +1,13 @@
+.Leaderboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.LeaderboardTable {
+    margin: 5rem;
+    background-color: black;
+    width: 50%;
+}

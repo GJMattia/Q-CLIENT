@@ -41,7 +41,7 @@ export default function ProfileStats({ categories }) {
                                     <td className='Category' style={{ color: color }}>{capitalizedCategory}</td>
                                     <td className='Right'>{counts['right']}</td>
                                     <td className='Wrong'>{counts['wrong']}</td>
-                                    <td className='Average'> {percentageRight.toFixed(2)}%</td>
+                                    <td className={percentageRight === 0 ? 'Average' : percentageRight < 50 ? 'Wrong' : 'Right'}> {percentageRight.toFixed(2)}%</td>
                                 </tr>
                             );
                         })}

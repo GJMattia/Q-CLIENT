@@ -1,0 +1,165 @@
+.Help {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.Help>h1 {
+    margin-bottom: .5rem;
+}
+
+.HelpBox {
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    width: 60%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+    border-radius: .2rem;
+}
+
+.HelpBox>h3 {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: dodgerblue;
+    width: 100%;
+    text-align: center;
+    height: 3rem;
+
+}
+
+.HelpBox>p {
+    width: 95%;
+    font-style: italic;
+    text-align: center;
+    border-bottom: 1px solid rgb(190, 190, 190);
+    padding-bottom: 1rem;
+}
+
+/* XP Section */
+
+.DifficultyHelp {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 90%;
+}
+
+.DifficultyHelp>p {
+    font-style: italic;
+    padding: .5rem;
+    text-align: center;
+    width: 25%;
+    border-radius: .2rem;
+}
+
+.EasyHelp {
+    background-color: lawngreen;
+
+}
+
+.MediumHelp {
+    background-color: yellow;
+}
+
+.HardHelp {
+    background-color: red;
+}
+
+/* PowerUp Section */
+
+.PowerupHelp {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.PowerupInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: .2rem;
+    width: 30%;
+
+}
+
+.PowerupInfo>img {
+    border-radius: .2rem;
+    width: 7rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    filter: brightness(150%);
+}
+
+.PowerupInfo>p {
+    width: 90%;
+    font-size: .9rem;
+    font-style: italic;
+    text-align: center;
+}
+
+/* Badge Section */
+
+.BadgesInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.BadgeInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: .2rem;
+    width: 25%;
+}
+
+.BadgeInfo>img {
+    width: 7rem;
+}
+
+.BadgeInfo>p {
+    width: 90%;
+    font-style: italic;
+    text-align: center;
+}
+
+.BadgeInfo>h1 {
+    font-size: 1.5rem;
+}
+
+
+@media (max-width: 1000px) {
+
+    .HelpBox {
+        width: 95%;
+    }
+
+    .BadgeInfo>img {
+        width: 4rem;
+    }
+
+    .BadgeInfo>h1 {
+        font-size: 1rem;
+    }
+
+    .PowerupInfo>img {
+        width: 5rem;
+    }
+
+}

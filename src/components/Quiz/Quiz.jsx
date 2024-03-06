@@ -5,6 +5,12 @@ import Correct from '../../assets/audio/correct.mp3';
 import Wrong from '../../assets/audio/wrong.mp3';
 import Categories from '../../assets/data/categories.json';
 import Select from '../../assets/audio/select.mp3';
+import Minus from '../../assets/pictures/minus.webp';
+import Skip from '../../assets/pictures/skip.webp';
+import x4 from '../../assets/pictures/x4.webp';
+import MinusSound from '../../assets/audio/Minus.mp3';
+import QuadSound from '../../assets/audio/Quad.mp3';
+import SkipSound from '../../assets/audio/skip.mp3'
 
 export default function Quiz({ questionSet, setQuestionSet, setAccount, setResults, setScore, score, account }) {
 
@@ -15,6 +21,7 @@ export default function Quiz({ questionSet, setQuestionSet, setAccount, setResul
     const [next, setNext] = useState(true);
     const [color, setColor] = useState(Categories.categories[parseCategory(questionSet[0].category)].color);
     const [mult, setMult] = useState(1);
+    const [power, setPower] = useState(true);
 
     //Auto Shuffle when the question variable is changed.
     useEffect(shuffleAnswers, [question, questionSet]);
@@ -90,13 +97,16 @@ export default function Quiz({ questionSet, setQuestionSet, setAccount, setResul
             addXp();
             submitAnswer(1);
             setScore([...score, `Question ${question + 1}: Correct, +${earned}xp`]);
+            setMult(1);
         } else {
             playSound(Wrong);
             submitAnswer(0);
-            setScore([...score, `Question ${question + 1}: Incorrect`])
+            setScore([...score, `Question ${question + 1}: Incorrect`]);
+            setMult(1);
         }
         showAnswers();
         setNext(!next);
+        setPower(false);
     };
 
     //Showing the right and wrong answers
@@ -133,6 +143,7 @@ export default function Quiz({ questionSet, setQuestionSet, setAccount, setResul
         setChoice(null);
         setQuestion(question + 1);
         setNext(!next);
+        setPower(true);
     };
 
     function xpCalc(string) {
@@ -151,7 +162,6 @@ export default function Quiz({ questionSet, setQuestionSet, setAccount, setResul
         try {
             const response = await accountAPI.addXp({ xp: earned });
             setAccount(response);
-            setMult(1);
         } catch (error) {
             console.error('Error Awarding XP'.error)
         }
@@ -176,6 +186,10 @@ export default function Quiz({ questionSet, setQuestionSet, setAccount, setResul
     };
 
     function skip() {
+        if (account.powerups.skip <= 0) {
+            return;
+        };
+        playSound(SkipSound);
         if (question === questionSet.length - 1) {
             setResults(true);
             setQuestionSet(null);
@@ -191,13 +205,22 @@ export default function Quiz({ questionSet, setQuestionSet, setAccount, setResul
     };
 
     function quad() {
+        if (account.powerups.quad <= 0) {
+            return;
+        };
+        playSound(QuadSound);
+        setPower(false);
         setMult(4);
         usePowerup('quad');
     };
 
     function minus() {
+        if (account.powerups.minus <= 0) {
+            return;
+        };
+        playSound(MinusSound);
+        setPower(false);
         let remove = Decode(questionSet[question].incorrect_answers[getRandomNumber()]);
-
         let answerElements = document.querySelectorAll('.Answer');
 
         for (let i = 0; i < answerElements.length; i++) {
@@ -225,22 +248,23 @@ export default function Quiz({ questionSet, setQuestionSet, setAccount, setResul
                     <div onClick={handleChoice} className='Answer'>{Decode(answers[3])}</div>
                 </div>
 
-                <div style={{ background: dLevelColor(questionSet[question].difficulty) }} className='Dlevel'>{questionSet[question].difficulty}</div>
+                <div style={{ background: dLevelColor(questionSet[question].difficulty) }} className='Dlevel'>Difficulty: {questionSet[question].difficulty}</div>
                 <div style={{ background: color }} className='CategoryName'>Category: {parseCategory2(parseCategory(questionSet[0].category))}</div>
+                <div className='Multiplier'>XP Multiplier: x{mult} </div>
                 <button onClick={next ? handleConfirm : nextQuestion} className='Confirm'>{next ? 'Confirm' : 'Next'}</button>
             </div>
-            <div className={`Powerups ${!next ? 'Forbidden' : ''}`}>
+            <div className={`Powerups ${!power ? 'Forbidden' : ''}`}>
                 <div className='Powerup'>
+                    <img className='PowerupIcon' src={Skip} onClick={skip} />
                     <p>{account.powerups.skip}</p>
-                    <button onClick={skip}>Skip</button>
                 </div>
                 <div className='Powerup'>
+                    <img className='PowerupIcon' src={x4} onClick={quad} />
                     <p>{account.powerups.quad}</p>
-                    <button onClick={quad}>x4</button>
                 </div>
                 <div className='Powerup'>
+                    <img className='PowerupIcon' src={Minus} onClick={minus} />
                     <p>{account.powerups.minus}</p>
-                    <button onClick={minus}>-1</button>
                 </div>
             </div>
         </>

@@ -9,6 +9,8 @@ import './App.css';
 import Footer from '../Footer/Footer';
 import Home from '../Home/Home';
 import Play from '../Play/Play';
+import Help from '../Help/Help';
+import Leaderboard from '../Leaderboard/Leaderboard';
 
 export default function App() {
 
@@ -24,6 +26,8 @@ export default function App() {
           <Routes>
             <Route path='/play' element={<Play user={user} />} />
             <Route path='/' element={<Profile user={user} />} />
+            <Route path='/help' element={<Help user={user} />} />
+            <Route path='/leaderboard' element={<Leaderboard user={user} />} />
             <Route path='/sauce' element={<Sauce user={user} />} />
           </Routes>
           <Footer />

@@ -1,11 +1,12 @@
 .QuizContainer {
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
     width: 90%;
     margin: 1rem;
-    padding: 1rem;
+    padding: 2rem;
     box-shadow: 0 0 10px rgb(0, 0, 0);
     backdrop-filter: blur(5px);
     user-select: none;
@@ -19,8 +20,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 10%;
-    height: 8%;
+    width: 15%;
+    height: 6%;
     position: absolute;
     background-color: white;
     bottom: 2%;
@@ -34,12 +35,26 @@
     justify-content: center;
     align-items: center;
     width: 15%;
-    height: 8%;
+    height: 6%;
     position: absolute;
-    bottom: 2%;
-    right: 1%;
+    bottom: 10%;
+    left: 1%;
     border-radius: .2rem;
     box-shadow: 0 0 10px rgb(0, 0, 0);
+}
+
+.Multiplier {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+    height: 6%;
+    position: absolute;
+    bottom: 18%;
+    left: 1%;
+    border-radius: .2rem;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 .QuestionContainer {
@@ -147,17 +162,17 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 80%;
-    height: 15%;
-    background-color: white;
+    width: 16%;
     border-radius: .2rem;
     margin-top: 1rem;
-    padding: 1rem;
-    border: 1px solid black;
+    position: absolute;
+    bottom: 9.5%;
+    right: 6%;
+
 }
 
 .Forbidden {
-    background-color: red;
+    filter: saturate(0%);
     pointer-events: none;
 }
 
@@ -166,36 +181,55 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    width: 27%;
-    height: 90%;
-
-}
-
-.Powerup>button {
-    border: 0;
-    cursor: pointer;
     width: 100%;
-    margin: 0;
-    height: 2rem;
+    height: 90%;
 }
+
 
 .Powerup>p {
-    margin: 0;
+    margin-top: .5rem;
     text-align: center;
     width: 100%;
+    font-weight: bold;
+    color: white;
 }
 
-.Powerup>button:hover {
-    color: white;
-    background-color: dodgerblue;
+.PowerupIcon {
+    filter: brightness(150%);
+    width: 70%;
+    cursor: pointer;
+    border-radius: .5rem;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+}
+
+.PowerupIcon:hover {
+    filter: brightness(200%);
 }
 
 @media (max-width: 1000px) {
+
+    .Powerups {
+        width: 80%;
+        position: relative;
+        bottom: 0;
+        right: 0;
+    }
+
+    .PowerupIcon {
+        width: 60%;
+    }
+
+    .Powerup>p {
+        color: black;
+    }
 
     .Dlevel {
         display: none;
     }
 
+    .Multiplier {
+        display: none;
+    }
 
     .CategoryName {
         display: none;
