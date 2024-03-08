@@ -26,7 +26,7 @@
     background-color: rgba(255, 255, 255, 0.8);
 }
 
-th {
+.StatsTable>thead>tr>th {
     color: white;
     border-bottom: 1px solid #858585;
     font-size: 1.2rem;
@@ -35,7 +35,7 @@ th {
     padding: 1rem;
 }
 
-td {
+.StatsTable>tbody>tr>td {
     text-align: center;
     color: #fff;
     font-weight: 400;
@@ -43,11 +43,11 @@ td {
 }
 
 
-tbody tr {
+.StatsTable>tbody>tr {
     transition: background 0.25s ease;
 }
 
-tbody tr:hover {
+.StatsTable>tbody>tr:hover {
     background-color: rgba(255, 255, 255, 0.8);
 }
 

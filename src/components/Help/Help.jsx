@@ -11,7 +11,7 @@ export default function Help() {
 
     return (
         <div className='Help'>
-            <h1>Need some help?</h1>
+            <h1 className='PlayTitle'>Need some help?</h1>
             <div className='HelpBox'>
                 <h3>Xp Info</h3>
                 <p>XP is earned by answering questions correctly. Upon accumulating 100 XP, a level is gained, and the XP count resets to 0.

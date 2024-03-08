@@ -12,16 +12,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 30%;
+    width: 50%;
     color: white;
     padding: 0;
     list-style: none;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
     border-radius: .2rem;
-    background: linear-gradient(315deg, rgb(89, 0, 255) 3%, rgb(0, 26, 23) 38%, rgba(2, 171, 245, 1) 68%, rgb(255, 4, 0) 98%);
-    animation: gradient 40s ease infinite;
-    background-size: 400% 400%;
-    background-attachment: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .ResultItem {

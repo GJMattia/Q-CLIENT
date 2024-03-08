@@ -5,18 +5,17 @@
     align-items: center;
     width: 80%;
     position: relative;
-    border-bottom: 1px solid rgb(155, 155, 155);
     margin-top: 1rem;
 }
 
 .LevelBox {
-    background-color: rgb(35, 35, 35);
+    background-color: rgba(0, 0, 0, 0.7);
     text-align: center;
     width: 20%;
     margin-bottom: 1rem;
-    border: 1px solid white;
+    border: 1px solid rgb(207, 207, 207);
     box-shadow: 0 4px 8px rgb(0, 0, 0);
-    border-radius: .5rem;
+    border-radius: .3rem;
 }
 
 .LevelBox>p {
@@ -31,7 +30,7 @@
     height: 1.5rem;
     border-radius: .2rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
-    background-color: rgb(240, 240, 240);
+    background-color: rgba(255, 255, 255, 0.9);
     position: relative;
     margin-bottom: 1.5rem;
 }

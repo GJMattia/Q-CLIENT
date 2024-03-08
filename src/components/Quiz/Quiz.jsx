@@ -19,7 +19,7 @@ export default function Quiz({ questionSet, setQuestionSet, setAccount, setResul
     const [answers, setAnswers] = useState([]);
     const [choice, setChoice] = useState(null);
     const [next, setNext] = useState(true);
-    const [color, setColor] = useState(Categories.categories[parseCategory(questionSet[0].category)].color);
+    const [color, setColor] = useState(Categories.categories[parseCategory(questionSet[0].category)].quiz);
     const [mult, setMult] = useState(1);
     const [power, setPower] = useState(true);
 
@@ -235,10 +235,10 @@ export default function Quiz({ questionSet, setQuestionSet, setAccount, setResul
 
     return (
         <>
-            <div className='QuizContainer'>
+            <div style={{ backgroundColor: color }} className='QuizContainer'>
                 <div className='QuestionContainer'>
                     <div className='QuestionNumber'>{question + 1}/ {questionSet.length}</div>
-                    <div className='QuestionText'>{Decode(questionSet[question].question)}</div>
+                    <p className='QuestionText'>{Decode(questionSet[question].question)}</p>
                 </div>
 
                 <div className='Answers'>
@@ -249,7 +249,7 @@ export default function Quiz({ questionSet, setQuestionSet, setAccount, setResul
                 </div>
 
                 <div style={{ background: dLevelColor(questionSet[question].difficulty) }} className='Dlevel'>Difficulty: {questionSet[question].difficulty}</div>
-                <div style={{ background: color }} className='CategoryName'>Category: {parseCategory2(parseCategory(questionSet[0].category))}</div>
+                <div className='CategoryName'>Category: {parseCategory2(parseCategory(questionSet[0].category))}</div>
                 <div className='Multiplier'>XP Multiplier: x{mult} </div>
                 <button onClick={next ? handleConfirm : nextQuestion} className='Confirm'>{next ? 'Confirm' : 'Next'}</button>
             </div>

@@ -1,13 +1,19 @@
 import './Leaderboard.css';
 import { useState, useEffect } from 'react';
 import { getAllAccounts } from '../../../utilities/accounts-api';
-import CategoriesData from '../../assets/data/categories.json';
-import Select from '../../assets/audio/select.mp3';
+import Deadlift from '../../assets/pictures/Deadlift.png';
 
 export default function Leaderboard() {
 
     const [accounts, setAccounts] = useState(null);
-    const [selectedCategory, setSelectedCategory] = useState(11);
+    const [choice, setChoice] = useState('film');
+
+    const handleCategoryChange = (event) => {
+        setChoice(event.target.value);
+    };
+
+    const categories = ['film', 'music', 'television', 'videogames',
+        'mythology', 'sports', 'geography', 'history', 'politics', 'animals', 'vehicles'];
 
     const playSound = (sound) => {
         const audio = new Audio(sound);
@@ -19,20 +25,12 @@ export default function Leaderboard() {
             try {
                 const accounts = await getAllAccounts({});
                 setAccounts(accounts);
-                console.log(accounts)
             } catch (error) {
                 console.error('Error Fetching Questions', error);
             }
         }
         getAllAccounts2();
     }, []);
-
-
-    const handleCategoryClick = (category) => {
-        const categoryData = CategoriesData.categories[category];
-        setSelectedCategory(categoryData.code);
-        playSound(Select);
-    };
 
     return (
         <>
@@ -42,20 +40,17 @@ export default function Leaderboard() {
                 </div>
             ) : (
                 <div className='Leaderboard'>
-                    <h2>Leaderboard Gang</h2>
-                    <div className='Categories'>
-                        <h4 className='TopTitle'>Category</h4>
-                        <div className='Categorys'>
-                            {Object.entries(CategoriesData.categories).map(([category, properties]) => (
-                                <button
-                                    key={category}
-                                    onClick={() => handleCategoryClick(category)}
-                                    style={{ background: properties.color }}
-                                    className={`CategoryBtn ${selectedCategory === properties.code ? 'Selected' : ''}`}
-                                >
-                                    {category}
-                                </button>
-                            ))}
+                    <h2 className='PlayTitle'>Leaderboard Gang</h2>
+
+                    <div className='CategorySelection'>
+                        <h4>Leaderboard Sorter</h4>
+                        <div className='DualBox'>
+                            <select value={choice} onChange={handleCategoryChange}>
+                                {categories.map(category => (
+                                    <option key={category} value={category}>{category}</option>
+                                ))}
+                            </select>
+                            <img src={Deadlift} />
                         </div>
                     </div>
 
@@ -65,15 +60,15 @@ export default function Leaderboard() {
                         <thead>
                             <tr>
                                 <th>Name</th>
-                                <th>Overall %</th>
+                                <th>{choice}</th>
                             </tr>
                         </thead>
                         <tbody>
                             {accounts && accounts.length > 0 && (
                                 accounts.map((account, index) => {
                                     let average = (
-                                        (account.overall.right /
-                                            (account.overall.right + account.overall.wrong)) *
+                                        (account.categories[choice].right /
+                                            (account.categories[choice].right + account.categories[choice].wrong)) *
                                         100
                                     ).toFixed(2);
                                     average = isNaN(average) ? '0.00' : average;
@@ -91,6 +86,9 @@ export default function Leaderboard() {
 
                         </tbody>
                     </table>
+
+
+
                 </div>
             )}
         </>

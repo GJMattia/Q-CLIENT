@@ -8,12 +8,6 @@
     position: absolute;
     backdrop-filter: blur(5px);
     background-color: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    transition: opacity 1s ease;
-}
-
-.EditMottoBox:hover {
-    opacity: 1;
 }
 
 .EditMotto {

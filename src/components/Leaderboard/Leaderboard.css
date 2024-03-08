@@ -4,10 +4,95 @@
     align-items: center;
     justify-content: flex-start;
     width: 100%;
+    height: 100%;
+    background: linear-gradient(315deg, rgb(35, 0, 101) 3%, rgb(0, 200, 117) 38%, rgb(0, 115, 164) 68%, rgb(183, 0, 0) 98%);
+    animation: gradient 60s ease infinite;
+    background-size: 400% 400%;
+    background-attachment: fixed;
+    user-select: none;
 }
 
+/* Table */
 .LeaderboardTable {
-    margin: 5rem;
-    background-color: black;
+    margin: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+    border-radius: .2rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 30%;
+}
+
+.LeaderboardTable>thead {
+    color: white;
+    height: 3rem;
+}
+
+.LeaderboardTable>thead>tr {
     width: 50%;
+    text-align: center;
+}
+
+.LeaderboardTable>tbody>tr>td {
+    color: white;
+    width: 50%;
+    text-align: center;
+    height: 2rem;
+}
+
+/* Sorter */
+
+.CategorySelection {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 30%;
+    margin: 1rem;
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+    border-radius: .2rem;
+}
+
+.CategorySelection>h4 {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: dodgerblue;
+    width: 100%;
+    text-align: center;
+    height: 3rem;
+    margin-bottom: 1rem;
+}
+
+.DualBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 90%;
+    margin-bottom: 2rem;
+}
+
+
+
+.DualBox>select {
+    width: 30%;
+}
+
+.DualBox>img {
+    width: 40%;
+}
+
+@media (max-width: 1000px) {
+
+    .LeaderboardTable {
+        width: 90%;
+        margin-bottom: 10rem;
+    }
+
+
+    .CategorySelection {
+        width: 90%;
+    }
 }

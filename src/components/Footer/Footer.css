@@ -1,11 +1,10 @@
 footer {
-    margin-top: 1rem;
     user-select: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 85%;
-    border-top: 1px solid gray;
+    width: 100%;
+    background-color: rgb(0, 120, 239);
 }
 
 footer>ul {
@@ -15,15 +14,19 @@ footer>ul {
 }
 
 footer>ul>li {
-    color: darkgray;
+    color: white;
     margin-left: 2rem;
     margin-right: 2rem;
     text-align: center;
 }
 
 footer>ul>li>a {
-    color: dodgerblue;
+    color: white;
     text-decoration: none;
+}
+
+footer>ul>li>a:hover {
+    text-decoration: underline;
 }
 
 
@@ -35,7 +38,6 @@ footer>ul>li>a {
     }
 
     footer>ul>li {
-        color: darkgray;
         margin-left: 1rem;
         margin-right: 1rem;
     }

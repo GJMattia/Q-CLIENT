@@ -1,19 +1,14 @@
 .QuizContainer {
+    position: relative;
     box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
     width: 90%;
-    margin: 1rem;
-    padding: 2rem;
+    padding: 3rem;
     box-shadow: 0 0 10px rgb(0, 0, 0);
-    backdrop-filter: blur(5px);
     user-select: none;
-    background: linear-gradient(315deg, rgb(89, 0, 255) 3%, rgb(0, 255, 229) 38%, rgba(2, 171, 245, 1) 68%, rgb(255, 4, 0) 98%);
-    animation: gradient 40s ease infinite;
-    background-size: 400% 400%;
-    background-attachment: fixed;
 }
 
 .Dlevel {
@@ -21,10 +16,10 @@
     justify-content: center;
     align-items: center;
     width: 15%;
-    height: 6%;
+    height: 5%;
     position: absolute;
     background-color: white;
-    bottom: 2%;
+    bottom: 1%;
     left: 1%;
     border-radius: .2rem;
     box-shadow: 0 0 10px rgb(0, 0, 0);
@@ -35,12 +30,13 @@
     justify-content: center;
     align-items: center;
     width: 15%;
-    height: 6%;
+    height: 5%;
     position: absolute;
-    bottom: 10%;
+    bottom: 7%;
     left: 1%;
     border-radius: .2rem;
     box-shadow: 0 0 10px rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 .Multiplier {
@@ -48,13 +44,13 @@
     justify-content: center;
     align-items: center;
     width: 15%;
-    height: 6%;
+    height: 5%;
     position: absolute;
-    bottom: 18%;
+    bottom: 13%;
     left: 1%;
     border-radius: .2rem;
     box-shadow: 0 0 10px rgb(0, 0, 0);
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(103, 207, 255, 0.8);
 }
 
 .QuestionContainer {
@@ -63,7 +59,7 @@
     align-items: center;
     justify-content: flex-start;
     flex-direction: row;
-    width: 90%;
+    width: 95%;
     padding: 1rem;
     box-shadow: 0 0 10px rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.8);
@@ -100,10 +96,10 @@
     cursor: pointer;
     width: 40%;
     height: 6rem;
-    margin: 1rem;
+    margin: 2rem;
     text-align: center;
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     border: 1px solid white;
     box-shadow: 0 0 10px rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.7);
@@ -124,9 +120,9 @@
     color: white;
     border: 1px solid white;
     box-shadow: 0 0 10px rgb(0, 0, 0);
-    width: 50%;
+    width: 60%;
     height: 4rem;
-    margin: 2rem;
+    margin-top: 3rem;
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.8);
 }
@@ -160,15 +156,14 @@
 
 .Powerups {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     width: 16%;
     border-radius: .2rem;
     margin-top: 1rem;
     position: absolute;
-    bottom: 9.5%;
+    bottom: 10%;
     right: 6%;
-
 }
 
 .Forbidden {
@@ -177,12 +172,12 @@
 }
 
 .Powerup {
+    margin-top: 1.5rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     width: 100%;
-    height: 90%;
 }
 
 
@@ -208,15 +203,44 @@
 
 @media (max-width: 1000px) {
 
+    .QuizContainer {
+        width: 98%;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .QuestionContainer {
+        margin-top: 1rem;
+        display: flex;
+        padding: 0rem;
+    }
+
+    .QuestionText {
+        font-size: 1rem;
+        color: white;
+        width: 95%;
+        height: 3rem;
+    }
+
+    .Confirm {
+        margin: 1rem;
+        font-size: 1.5rem;
+        height: 2.5rem;
+        width: 90%;
+    }
+
     .Powerups {
-        width: 80%;
+        width: 90%;
         position: relative;
         bottom: 0;
         right: 0;
+        background-color: rgba(255, 255, 255, 0.4);
+        box-shadow: 0 0 10px rgb(0, 0, 0);
     }
 
     .PowerupIcon {
-        width: 60%;
+        width: 45%;
+
     }
 
     .Powerup>p {
@@ -236,26 +260,32 @@
     }
 
     .QuestionContainer {
+        position: relative;
         justify-content: center;
         width: 95%;
     }
 
     .QuestionNumber {
-        display: none;
+        position: absolute;
+        left: 0%;
+        top: 0%;
+        padding: .3rem;
+        border: none;
     }
 
     .QuestionText {
+        margin: 2rem;
+        margin-top: 2.5rem;
         font-size: 1.2rem;
     }
 
 
     .Answer {
         width: 95%;
+        height: 3rem;
+        margin: 1rem;
         font-size: 1.2rem;
     }
 
-    .Confirm {
-        width: 95%;
-    }
 
 }

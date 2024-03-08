@@ -17,6 +17,10 @@
     color: white;
 }
 
+.Warning>p {
+    width: 90%;
+}
+
 .Warning>button {
     border: 0;
     margin-bottom: 1rem;
