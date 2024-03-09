@@ -38,6 +38,11 @@
     height: 2rem;
 }
 
+.LeaderboardTable>tbody>tr>td:hover {
+    cursor: pointer;
+    color: dodgerblue;
+}
+
 /* Sorter */
 
 .CategorySelection {

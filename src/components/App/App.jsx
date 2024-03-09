@@ -11,6 +11,7 @@ import Home from '../Home/Home';
 import Play from '../Play/Play';
 import Help from '../Help/Help';
 import Leaderboard from '../Leaderboard/Leaderboard';
+import Other from '../Other/Other';
 
 export default function App() {
 
@@ -28,6 +29,7 @@ export default function App() {
             <Route path='/' element={<Profile user={user} />} />
             <Route path='/help' element={<Help user={user} />} />
             <Route path='/leaderboard' element={<Leaderboard user={user} />} />
+            <Route path='/other' element={<Other user={user} />} />
             <Route path='/sauce' element={<Sauce user={user} />} />
           </Routes>
           <Footer />

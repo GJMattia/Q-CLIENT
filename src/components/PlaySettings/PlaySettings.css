@@ -45,7 +45,8 @@
     width: 40%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
     border-radius: .2rem;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
 }
 
 .TopTitle {
@@ -53,13 +54,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.8);
     width: 100%;
     text-align: center;
     height: 3rem;
     position: absolute;
     top: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
 }
 
 .Amount>button {
@@ -76,11 +77,11 @@
 }
 
 .Five {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .Ten {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .Amount>button:hover {
@@ -101,7 +102,8 @@
     width: 40%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
     border-radius: .2rem;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
 }
 
 
@@ -119,15 +121,15 @@
 
 .Easy {
     margin-top: 4rem;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .Medium {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .Hard {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .Difficulty>button:hover {
@@ -145,7 +147,8 @@
     position: relative;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
     border-radius: .2rem;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
 }
 
 .Categorys {
@@ -166,7 +169,7 @@
     cursor: pointer;
     border: none;
     font-weight: 600;
-    border-radius: .2rem;
+    border-radius: .1rem;
     margin: 1rem;
     filter: saturate(0%);
     color: white;
@@ -186,15 +189,16 @@
     cursor: pointer;
     transition: background 0.30s ease;
     margin: 2rem;
-    background-color: rgba(255, 255, 255, 0.6);
+    background: linear-gradient(315deg, rgb(234, 0, 255) 3%, rgb(0, 255, 229) 38%, rgba(2, 171, 245, 1) 68%, rgb(255, 4, 0) 98%);
+    background-size: 400% 400%;
+    background-attachment: fixed;
+    color: white;
+    animation: gradient 5s ease infinite;
 }
 
 .Begin:hover {
-    background: linear-gradient(315deg, rgb(89, 0, 255) 3%, rgb(0, 255, 229) 38%, rgba(2, 171, 245, 1) 68%, rgb(255, 4, 0) 98%);
-    background-size: 400% 400%;
-    background-attachment: fixed;
-    animation: gradient 2s ease infinite;
-    color: white;
+    animation: gradient 1s ease infinite;
+
 }
 
 .Selected {

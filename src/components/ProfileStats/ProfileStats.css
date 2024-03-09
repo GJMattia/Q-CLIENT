@@ -27,7 +27,6 @@
 }
 
 .StatsTable>thead>tr>th {
-    color: white;
     border-bottom: 1px solid #858585;
     font-size: 1.2rem;
     font-weight: 600;
@@ -37,8 +36,6 @@
 
 .StatsTable>tbody>tr>td {
     text-align: center;
-    color: #fff;
-    font-weight: 400;
     padding: 1rem;
 }
 
@@ -121,15 +118,14 @@
 
     .StatsTable {
         width: 95%;
-
     }
 
-    th {
+    .StatsTable>thead>tr>th {
         font-size: 1rem;
         padding: .5rem;
     }
 
-    td {
+    .StatsTable>tbody>tr>td {
         padding: .8rem;
     }
 

@@ -6,6 +6,7 @@ import EditMotto from '../EditMotto/EditMotto';
 import ProPicUpload from '../ProPicUpload/ProPicUpload';
 import ProfileStats from '../ProfileStats/ProfileStats';
 import Badges from '../Badges/Badges';
+import Loading from '../Loading/Loading';
 
 export default function Profile({ user }) {
 
@@ -44,7 +45,7 @@ export default function Profile({ user }) {
     };
 
     return (
-        account && (
+        account && user ? (
             <div className='Profile'>
                 {motto && <EditMotto motto={motto} setMotto={setMotto} account={account} setAccount={setAccount} />}
                 {pic && <ProPicUpload setAccount={setAccount} pic={pic} setPic={setPic} />}
@@ -63,9 +64,9 @@ export default function Profile({ user }) {
                 </div>
                 <ProfileStats categories={account.categories} />
                 <Badges account={account} />
-                {/* <XPBar xp={account.xp} level={account.level} /> */}
-
             </div>
-        )
-    );
+        ) :
+            (<Loading />
+            )
+    )
 };

@@ -36,6 +36,5 @@
     .NavBar2 {
         height: 10.5rem;
         flex-direction: column;
-        border-bottom: 1px solid azure;
     }
 }
