@@ -12,14 +12,29 @@
     user-select: none;
 }
 
+.Selector {
+    margin-top: 2rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-transform: capitalize;
+    width: 30%;
+    height: 3rem;
+    font-size: 1.5rem;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+    border: none;
+}
+
 /* Table */
 .LeaderboardTable {
-    margin: 1rem;
+    margin: 2rem;
+    margin-top: 3rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
     border-radius: .2rem;
-    background-color: rgba(0, 0, 0, 0.7);
-    width: 30%;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 40%;
 }
+
 
 .LeaderboardTable>thead {
     color: white;
@@ -27,77 +42,81 @@
 }
 
 .LeaderboardTable>thead>tr {
-    width: 50%;
     text-align: center;
+    width: 33%;
+    text-transform: capitalize;
 }
 
 .LeaderboardTable>tbody>tr>td {
-    color: white;
-    width: 50%;
     text-align: center;
     height: 2rem;
+    width: 33%;
+}
+
+.OtherName {
+    font-weight: 900;
+    color: dodgerblue;
+}
+
+.Rank {
+    pointer-events: none;
+    color: white;
 }
 
 .LeaderboardTable>tbody>tr>td:hover {
     cursor: pointer;
-    color: dodgerblue;
+    color: rgb(30, 206, 255);
 }
 
 /* Sorter */
 
-.CategorySelection {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    width: 30%;
-    margin: 1rem;
-    background-color: rgba(255, 255, 255, 0.4);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
-    border-radius: .2rem;
-}
-
-.CategorySelection>h4 {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    background-color: dodgerblue;
-    width: 100%;
-    text-align: center;
-    height: 3rem;
-    margin-bottom: 1rem;
-}
-
-.DualBox {
+.Kingpin {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    width: 90%;
-    margin-bottom: 2rem;
+    width: 50%;
+    margin-top: 3rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+    border-radius: .2rem;
+    position: relative;
 }
 
 
-
-.DualBox>select {
-    width: 30%;
+.NumberOne {
+    font-size: 4rem;
+    margin: 0;
 }
 
-.DualBox>img {
+.LeaderboardTip {
+    text-align: center;
+    padding: .7rem;
     width: 40%;
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+    border-radius: .2rem;
+    margin: 0;
 }
 
 @media (max-width: 1000px) {
 
     .LeaderboardTable {
-        width: 90%;
-        margin-bottom: 10rem;
+        width: 95%;
+        margin-bottom: 5rem;
     }
 
 
-    .CategorySelection {
+    .Selector {
+        width: 95%;
+    }
+
+    .Kingpin {
+        width: 95%;
+    }
+
+    .LeaderboardTip {
         width: 90%;
+        margin-bottom: 3rem;
     }
 }

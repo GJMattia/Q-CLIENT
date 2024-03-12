@@ -20,9 +20,8 @@ export default function HomeGraphics() {
             </div>
             <div className='HomeGraphics'>
                 <div className='InfoContainer'>
-                    <h1>Spin to Win</h1>
-                    <p>Engage in the excitement of our slot machine mini-game to try your luck and win valuable rewards.
-                        Spin the reels, land winning combinations, and earn question skips along with other powerups that will enhance your quiz-playing adventure.</p>
+                    <h1>Power play</h1>
+                    <p>Elevate your quiz experience with three exciting power-ups! Enhance the fun and challenge of each quiz by strategically using these game-changing boosts.</p>
                 </div>
                 <div className='ImageContainer'>
                     <img className='PenguinSlot' src={PenguinSlot} />

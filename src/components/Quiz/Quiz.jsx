@@ -235,22 +235,21 @@ export default function Quiz({ questionSet, setQuestionSet, setAccount, setResul
 
     return (
         <>
-            <div style={{ backgroundColor: color }} className='QuizContainer'>
-                <div className='QuestionContainer'>
-                    <div className='QuestionNumber'>{question + 1}/ {questionSet.length}</div>
-                    <p className='QuestionText'>{Decode(questionSet[question].question)}</p>
-                </div>
+            <div className='QuizBar'>
+                <h3>{question + 1}/ {questionSet.length}</h3>
+                <h4 style={{ color: Categories.categories[parseCategory(questionSet[0].category)].color }}>Category: {parseCategory2(parseCategory(questionSet[0].category))}</h4>
+                <h4 style={{ color: dLevelColor(questionSet[question].difficulty) }} className='Dlevel'>Difficulty: {questionSet[question].difficulty}</h4>
+                <h4 className='Multiplier'>XP Multiplier: x{mult} </h4>
+            </div>
 
+            <div style={{ backgroundColor: color }} className='QuizContainer'>
+                <h2 className='QuestionText'>{Decode(questionSet[question].question)}</h2>
                 <div className='Answers'>
                     <div onClick={handleChoice} className='Answer'>{Decode(answers[0])}</div>
                     <div onClick={handleChoice} className='Answer'>{Decode(answers[1])}</div>
                     <div onClick={handleChoice} className='Answer'>{Decode(answers[2])}</div>
                     <div onClick={handleChoice} className='Answer'>{Decode(answers[3])}</div>
                 </div>
-
-                <div style={{ background: dLevelColor(questionSet[question].difficulty) }} className='Dlevel'>Difficulty: {questionSet[question].difficulty}</div>
-                <div className='CategoryName'>Category: {parseCategory2(parseCategory(questionSet[0].category))}</div>
-                <div className='Multiplier'>XP Multiplier: x{mult} </div>
                 <button onClick={next ? handleConfirm : nextQuestion} className='Confirm'>{next ? 'Confirm' : 'Next'}</button>
             </div>
             <div className={`Powerups ${!power ? 'Forbidden' : ''}`}>

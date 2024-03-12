@@ -6,7 +6,7 @@
     width: 100%;
     position: relative;
     user-select: none;
-    background: linear-gradient(315deg, rgba(72, 32, 149, 1) 3%, rgb(0, 200, 117) 38%, rgb(0, 115, 164) 68%, rgba(239, 83, 80, 1) 98%);
+    background: linear-gradient(315deg, rgb(89, 0, 255) 3%, rgb(0, 200, 117) 38%, rgb(2, 43, 156) 68%, rgb(251, 75, 0) 98%);
     animation: gradient 60s ease infinite;
     background-size: 400% 400%;
     background-attachment: fixed;

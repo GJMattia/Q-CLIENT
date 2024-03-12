@@ -37,9 +37,9 @@ export default function LoginForm({ setUser, log, setLog }) {
     <>
       <form className='LoginForm' autoComplete="off" onSubmit={handleSubmit}>
         <label className='LoginEmail'>📧</label>
-        <input placeholder='Your email address' type="text" name="email" value={credentials.email} onChange={handleChange} required />
+        <input min="1" max="25" placeholder='Your email address' type="text" name="email" value={credentials.email} onChange={handleChange} required />
         <label className='LoginPW'>🔒</label>
-        <input placeholder='Your password' type="password" name="password" value={credentials.password} onChange={handleChange} required />
+        <input min="1" max="25" placeholder='Your password' type="password" name="password" value={credentials.password} onChange={handleChange} required />
         <button className='LoginBtn' type="submit">Sign In</button>
       </form>
       <p className="Error">{error}</p>

@@ -2,7 +2,7 @@
     "categories": {
         "Film": {
             "color": "#FF5733",
-            "quiz": "rgba(255, 87, 51, 0.6)",
+            "quiz": "rgba(255, 87, 51, 0.4)",
             "code": 11,
             "gold": "src/assets/badges/film_gold.png",
             "silver": "src/assets/badges/film_silver.png",
@@ -11,7 +11,7 @@
         },
         "Music": {
             "color": "#9900FF",
-            "quiz": "rgba(153, 0, 255, 0.6)",
+            "quiz": "rgba(153, 0, 255, 0.4)",
             "code": 12,
             "gold": "src/assets/badges/music_gold.png",
             "silver": "src/assets/badges/music_silver.png",
@@ -20,7 +20,7 @@
         },
         "Television": {
             "color": "#FF3366",
-            "quiz": "rgba(255, 51, 102, 0.6)",
+            "quiz": "rgba(255, 51, 102, 0.4)",
             "code": 14,
             "gold": "src/assets/badges/television_gold.png",
             "silver": "src/assets/badges/television_silver.png",
@@ -29,7 +29,7 @@
         },
         "Video Games": {
             "color": "#33CCFF",
-            "quiz": "rgba(51, 204, 255, 0.6)",
+            "quiz": "rgba(51, 204, 255, 0.4)",
             "code": 15,
             "gold": "src/assets/badges/videogames_gold.png",
             "silver": "src/assets/badges/videogames_silver.png",
@@ -38,7 +38,7 @@
         },
         "Mythology": {
             "color": "#FFD700",
-            "quiz": "rgba(255, 215, 0, 0.6)",
+            "quiz": "rgba(255, 215, 0, 0.4)",
             "code": 20,
             "gold": "src/assets/badges/mythology_gold.png",
             "silver": "src/assets/badges/mythology_silver.png",
@@ -47,7 +47,7 @@
         },
         "Sports": {
             "color": "#00FF00",
-            "quiz": "rgba(0, 255, 0, 0.6)",
+            "quiz": "rgba(0, 255, 0, 0.4)",
             "code": 21,
             "gold": "src/assets/badges/sports_gold.png",
             "silver": "src/assets/badges/sports_silver.png",
@@ -56,7 +56,7 @@
         },
         "Geography": {
             "color": "#0066FF",
-            "quiz": "rgba(0, 102, 255, 0.6)",
+            "quiz": "rgba(0, 102, 255, 0.4)",
             "code": 22,
             "gold": "src/assets/badges/geography_gold.png",
             "silver": "src/assets/badges/geography_silver.png",
@@ -65,7 +65,7 @@
         },
         "History": {
             "color": "#FF9933",
-            "quiz": "rgba(255, 153, 51, 0.6)",
+            "quiz": "rgba(255, 153, 51, 0.4)",
             "code": 23,
             "gold": "src/assets/badges/history_gold.png",
             "silver": "src/assets/badges/history_silver.png",
@@ -74,7 +74,7 @@
         },
         "Politics": {
             "color": "#CC0000",
-            "quiz": "rgba(204, 0, 0, 0.6)",
+            "quiz": "rgba(204, 0, 0, 0.4)",
             "code": 24,
             "gold": "src/assets/badges/politics_gold.png",
             "silver": "src/assets/badges/politics_silver.png",
@@ -83,7 +83,7 @@
         },
         "Animals": {
             "color": "#9933CC",
-            "quiz": "rgba(153, 51, 204, 0.6)",
+            "quiz": "rgba(153, 51, 204, 0.4)",
             "code": 27,
             "gold": "src/assets/badges/animals_gold.png",
             "silver": "src/assets/badges/animals_silver.png",
@@ -92,7 +92,7 @@
         },
         "Vehicles": {
             "color": "#FF66B2",
-            "quiz": "rgba(255, 102, 178, 0.6)",
+            "quiz": "rgba(255, 102, 178, 0.4)",
             "code": 28,
             "gold": "src/assets/badges/vehicles_gold.png",
             "silver": "src/assets/badges/vehicles_silver.png",

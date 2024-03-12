@@ -46,13 +46,13 @@ export default function SignUpForm({ setUser, log, setLog }) {
     <>
       <form className='SignUpForm' autoComplete="off" onSubmit={handleSubmit}>
         <label className='CreateUser'>👤</label>
-        <input placeholder='Pick a Username' type="text" name="name" value={formData.name} onChange={handleChange} required />
+        <input min="1" max="10" placeholder='Pick a Username' type="text" name="name" value={formData.name} onChange={handleChange} required />
         <label className='CreateEmail'>📧</label>
-        <input placeholder='Your email address' type="email" name="email" value={formData.email} onChange={handleChange} required />
+        <input min="1" max="25" placeholder='Your email address' type="email" name="email" value={formData.email} onChange={handleChange} required />
         <label className='CreatePW1'>🔒</label>
-        <input placeholder='Create a password' type="password" name="password" value={formData.password} onChange={handleChange} required />
+        <input min="1" max="25" placeholder='Create a password' type="password" name="password" value={formData.password} onChange={handleChange} required />
         <label className='CreatePW2'>🔒</label>
-        <input placeholder='Confirm your password' type="password" name="confirm" value={formData.confirm} onChange={handleChange} required />
+        <input min="1" max="15" placeholder='Confirm your password' type="password" name="confirm" value={formData.confirm} onChange={handleChange} required />
         <button className='SignUpBtn' type="submit" disabled={disable}>
           Create My Account
         </button>
