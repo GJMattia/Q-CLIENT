@@ -39,7 +39,7 @@ export default function MusicPlayer({ song }) {
     return (
         <div className='MusicPlayer'>
             <audio ref={music} />
-            <button onClick={playPauseToggle}>{isPlaying ? 'Turn off Music' : 'Turn On Music'}</button>
+            <button onClick={playPauseToggle}>{isPlaying ? 'Toggle Music' : 'Toggle Music'}</button>
         </div>
     );
 };

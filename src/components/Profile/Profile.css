@@ -5,7 +5,7 @@
     align-items: center;
     width: 100%;
     user-select: none;
-    background: linear-gradient(315deg, rgb(84, 29, 187) 3%, rgb(2, 194, 98) 38%, rgb(1, 12, 134) 68%, rgb(238, 242, 8) 98%);
+    background: linear-gradient(315deg, #2e1e3c 3%, #00bb61 38%, #00204d 68%, #ffacea 98%);
     animation: gradient 40s ease infinite;
     background-size: 400% 400%;
     background-attachment: fixed;
@@ -22,7 +22,6 @@
     background-color: rgba(0, 0, 0, 0.3);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
     border-radius: .2rem;
-
 }
 
 .Username {

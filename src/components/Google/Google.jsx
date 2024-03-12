@@ -5,7 +5,7 @@ import { signUp, login } from '../../../utilities/user-services';
 import * as usersAPI from '../../../utilities/user-api';
 import { createAccount } from '../../../utilities/accounts-api';
 
-export default function Google({ setUser, log, setLog }) {
+export default function Google({ setUser, log, setLog, setLoading }) {
 
     function toggleLog() {
         setLog(!log);
@@ -20,6 +20,7 @@ export default function Google({ setUser, log, setLog }) {
             password: 'slop344'
         };
         try {
+            setLoading(true);
             const existingUser = await usersAPI.checkUser({
                 email: googleInfo.email
             });
@@ -39,11 +40,12 @@ export default function Google({ setUser, log, setLog }) {
 
         } catch (error) {
             console.log(error);
+        } finally {
+            setLoading(false);
         }
     };
 
     useEffect(() => {
-        /* global google */
         google.accounts.id.initialize({
             client_id: '278472483189-i60q3je7faglbpgr528i81agr29562db.apps.googleusercontent.com',
             callback: googleFunction

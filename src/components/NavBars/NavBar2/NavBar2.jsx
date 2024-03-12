@@ -16,7 +16,6 @@ export default function NavBarTwo({ user, setUser }) {
         <li><Link to='/'>Profile</Link></li>
         {/* <li> <Link to='/sauce'>Sauce</Link></li> */}
         <li> <Link to='/leaderboard'>Leaderboard</Link></li>
-        <li> <Link to='/help'>Help</Link></li>
         <li><Link to='' onClick={handleLogOut}>Log Out</Link></li>
       </ul>
     </div>

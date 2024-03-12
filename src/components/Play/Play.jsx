@@ -6,6 +6,7 @@ import Quiz from '../Quiz/Quiz';
 import Results from '../Results/Results';
 import XPBar from '../XPBar/XPBar';
 import MusicPlayer from '../MusicPlayer/MusicPlayer';
+import Loading from '../Loading/Loading';
 
 export default function Play({ user }) {
 
@@ -31,7 +32,7 @@ export default function Play({ user }) {
     }, []);
 
     return (
-        account && (
+        account ? (
             <div className='Play'>
                 {settings && <PlaySettings setQuestionSet={setQuestionSet} setSettings={setSettings} setSong={setSong} />}
                 {questionSet &&
@@ -43,6 +44,7 @@ export default function Play({ user }) {
                 {results && <Results score={score} />}
                 <MusicPlayer song={song} />
             </div>
-        )
+        ) :
+            (<Loading />)
     )
 };

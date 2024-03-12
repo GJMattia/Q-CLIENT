@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { signUp } from '../../../../utilities/user-services';
 import './SignUpForm.css';
 import { createAccount } from '../../../../utilities/accounts-api';
 
-export default function SignUpForm({ setUser, log, setLog }) {
+export default function SignUpForm({ setUser, log, setLog, setLoading }) {
 
   function toggleLog() {
     setLog(false);
@@ -29,6 +29,7 @@ export default function SignUpForm({ setUser, log, setLog }) {
   const handleSubmit = async (evt) => {
     evt.preventDefault();
     try {
+      setLoading(true);
       const { error, confirm, ...data } = formData;
       const user = await signUp(data);
       toggleLog();
@@ -37,6 +38,8 @@ export default function SignUpForm({ setUser, log, setLog }) {
       console.log(log)
     } catch (error) {
       setFormData({ ...formData, error: 'Sign Up Failed - Try Again' });
+    } finally {
+      setLoading(false);
     }
   };
 

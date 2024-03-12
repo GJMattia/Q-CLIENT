@@ -1,5 +1,5 @@
 .Badges {
-    width: 60%;
+    width: 70%;
     border: 1px solid black;
     display: flex;
     justify-content: space-evenly;
@@ -13,7 +13,7 @@
 }
 
 .Badge {
-    margin-top: .5rem;
+    margin: .5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -46,7 +46,7 @@
 @media (max-width: 1500px) {
 
     .Badges {
-        width: 70%;
+        width: 75%;
     }
 
 }
@@ -55,11 +55,17 @@
 
     .Badges {
         justify-content: space-between;
-        width: 85%;
+        width: 88%;
     }
 
     .Icon {
         width: 5rem;
     }
+
+    .Badge {
+        margin: 1rem;
+    }
+
+
 
 }

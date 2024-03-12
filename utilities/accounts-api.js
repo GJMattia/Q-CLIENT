@@ -1,6 +1,6 @@
 import sendRequest from "./send-request";
-// const BASE_URL = 'http://localhost:4741/accounts';
-const BASE_URL = 'https://q-api.onrender.com/accounts';
+const BASE_URL = 'http://localhost:4741/accounts';
+// const BASE_URL = 'https://q-api.onrender.com/accounts';
 
 
 export async function createAccount(userID) {

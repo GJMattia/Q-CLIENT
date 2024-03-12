@@ -2,7 +2,7 @@ import { useState } from 'react'
 import * as usersService from '../../../../utilities/user-services'
 import './LoginForm.css';
 
-export default function LoginForm({ setUser, log, setLog }) {
+export default function LoginForm({ setUser, log, setLog, setLoading }) {
 
   function toggleLog() {
     setLog(!log);
@@ -24,12 +24,15 @@ export default function LoginForm({ setUser, log, setLog }) {
     evt.preventDefault()
     const Error = document.querySelector('.Error');
     try {
+      setLoading(true);
       const user = await usersService.login(credentials)
       setUser(user);
       toggleLog();
     } catch {
       setError('Log In Failed - Try Again');
       Error.style.opacity = '1';
+    } finally {
+      setLoading(false);
     }
   }
 

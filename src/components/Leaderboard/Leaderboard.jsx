@@ -1,18 +1,19 @@
 import './Leaderboard.css';
 import { useState, useEffect } from 'react';
 import { getAllAccounts } from '../../../utilities/accounts-api';
+import CategoryData from '../../assets/data/categories.json';
 import Other from '../Other/Other';
 import Loading from '../Loading/Loading';
 
 
 export default function Leaderboard({ user }) {
 
+
     const [accounts, setAccounts] = useState(null);
     const [choice, setChoice] = useState('film');
     const [leaderboard, setLeaderboard] = useState(true);
     const [other, setOther] = useState(false);
     const [accountIndex, setAccountIndex] = useState(0);
-
 
     const handleCategoryChange = (event) => {
         const newChoice = event.target.value;
@@ -72,26 +73,21 @@ export default function Leaderboard({ user }) {
 
                     {leaderboard &&
                         <div className='Leaderboard'>
-                            <h2 className='PlayTitle'>Select a category to view the kingpin!</h2>
+                            <h2 className='PlayTitle'>Select a category to sort!</h2>
                             <select className='Selector' value={choice} onChange={handleCategoryChange}>
                                 {categories.map(category => (
                                     <option key={category} value={category}>{category}</option>
                                 ))}
                             </select>
-                            <div className='Kingpin'>
-                                <h1 className='NumberOne Username'>#1</h1>
-
-                                <h1 className='Username'>{accounts[0].user.name}</h1>
-
-
-                            </div>
 
                             <table className='LeaderboardTable'>
                                 <thead>
                                     <tr>
-                                        <th>Rank</th>
-                                        <th>Name</th>
-                                        <th>{choice}</th>
+                                        <th className='CategoryTitle'>Rank</th>
+                                        <th className='OtherName'>Name</th>
+                                        <th className='Right'>Right</th>
+                                        <th className='Wrong'>Wrong</th>
+                                        <th className='Average'>Average</th>
 
                                     </tr>
                                 </thead>
@@ -105,8 +101,10 @@ export default function Leaderboard({ user }) {
 
                                             return (
                                                 <tr key={index}>
-                                                    <td className='Rank'>#{index + 1}</td>
+                                                    <td className='CategoryTitle'>#{index + 1}</td>
                                                     <td className='OtherName' onClick={() => clickUser(index)}>{account.user.name}</td>
+                                                    <td className='Right'>{right}</td>
+                                                    <td className='Wrong'>{wrong}</td>
                                                     <td className={average < 50 ? 'Wrong' : 'Right'}>{`${average}%`}</td>
                                                 </tr>
                                             );
@@ -116,7 +114,7 @@ export default function Leaderboard({ user }) {
                                 </tbody>
                             </table>
 
-                            <h3 className='LeaderboardTip'>Click a username to view their full profile!</h3>
+                            <h3 className='LeaderboardTip'>Click a user to view their profile!</h3>
                         </div>
                     }
                 </>

@@ -68,5 +68,10 @@
 
     .XPBar {
         width: 90%;
+        height: 1rem;
+    }
+
+    #LevelName {
+        font-size: 1.5rem;
     }
 }

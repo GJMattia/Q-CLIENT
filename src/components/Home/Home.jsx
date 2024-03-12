@@ -4,10 +4,12 @@ import HomeGraphics from '../HomeGraphics/HomeGraphics';
 import Log from '../Log/Log';
 import SignUpForm from '../Auth/SignUpForm/SignUpForm';
 import { useState } from 'react';
+import Loading from '../Loading/Loading';
 
 export default function Home({ setUser, log, setLog, logType, setLogType }) {
 
     const [warning, setWarning] = useState(true);
+    const [loading, setLoading] = useState(false);
 
     function toggleWarning() {
         setWarning(false);
@@ -18,8 +20,10 @@ export default function Home({ setUser, log, setLog, logType, setLogType }) {
         document.body.style.overflow = log ? 'auto' : 'hidden';
     };
 
+
     return (
         <>
+            {loading && <Loading />}
             <div className='Home'>
                 {warning && (
                     <div className='Warning'>
@@ -39,12 +43,12 @@ export default function Home({ setUser, log, setLog, logType, setLogType }) {
                         <div className='SignInOptions'>
                             <h1 className='SignTitle'>Sign up for free!</h1>
                         </div>
-                        <SignUpForm log={log} setLog={setLog} setUser={setUser} />
+                        <SignUpForm log={log} setLog={setLog} setUser={setUser} setLoading={setLoading} />
                     </div>
                 </div>
             </div>
             <HomeGraphics />
-            {log && <Log log={log} setLog={setLog} setUser={setUser} logType={logType} setLogType={setLogType} />}
+            {log && <Log log={log} setLog={setLog} setUser={setUser} logType={logType} setLogType={setLogType} setLoading={setLoading} />}
         </>
     )
 }

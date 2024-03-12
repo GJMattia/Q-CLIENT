@@ -3,7 +3,7 @@ import LoginForm from '../Auth/LoginForm/LoginForm';
 import SignUpForm from '../Auth/SignUpForm/SignUpForm';
 import Google from '../Google/Google';
 
-export default function Log({ logType, setLogType, log, setLog, setUser }) {
+export default function Log({ logType, setLogType, log, setLog, setUser, setLoading }) {
 
     function toggleLog() {
         setLog(!log);
@@ -35,13 +35,13 @@ export default function Log({ logType, setLogType, log, setLog, setUser }) {
 
                 <div className='LogDiv'>
                     {logType === 0 ? (
-                        <LoginForm log={log} setLog={setLog} setUser={setUser} />
+                        <LoginForm log={log} setLog={setLog} setUser={setUser} setLoading={setLoading} />
                     ) : logType === 1 ? (
-                        <SignUpForm log={log} setLog={setLog} setUser={setUser} />
+                        <SignUpForm log={log} setLog={setLog} setUser={setUser} setLoading={setLoading} />
                     ) : (
                         <div className='SocialMedia'>
                             <h1>Sign in with Google!</h1>
-                            <Google log={log} setLog={setLog} setUser={setUser} />
+                            <Google log={log} setLog={setLog} setUser={setUser} setLoading={setLoading} />
                             <div className='Line'></div>
                         </div>
                     )}

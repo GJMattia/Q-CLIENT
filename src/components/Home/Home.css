@@ -58,6 +58,7 @@
     flex-direction: row;
     justify-content: space-evenly;
     margin-bottom: 4rem;
+    position: relative;
 }
 
 .BoxOne {
@@ -111,6 +112,7 @@
     background-color: white;
     border-radius: .2rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    position: relative;
 }
 
 .SignTitle {

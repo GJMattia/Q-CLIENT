@@ -70,44 +70,37 @@
 }
 
 .Average {
-    color: white;
+    color: yellow;
     font-weight: 900;
 }
 
 @keyframes rainbowFlash {
     0% {
         color: #ff0000;
-        /* Red */
     }
 
     16.666% {
         color: #ff9900;
-        /* Orange */
     }
 
     33.333% {
         color: #ffff00;
-        /* Yellow */
     }
 
     50% {
         color: #33cc33;
-        /* Green */
     }
 
     66.666% {
         color: #3399ff;
-        /* Blue */
     }
 
     83.333% {
         color: #9900cc;
-        /* Purple */
     }
 
     100% {
         color: #ff0000;
-        /* Back to Red */
     }
 }
 

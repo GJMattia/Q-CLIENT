@@ -1,4 +1,3 @@
-import React from 'react';
 import './Badges.css';
 import Categories from '../../assets/data/categories.json';
 

@@ -35,6 +35,7 @@ footer>ul>li>a:hover {
 
     footer {
         width: 100%;
+        font-size: .8rem;
     }
 
     footer>ul>li {
