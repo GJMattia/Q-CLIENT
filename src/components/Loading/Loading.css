@@ -34,6 +34,20 @@
     margin: 0;
 }
 
+.Loading>h5 {
+    background-color: black;
+    width: 10%;
+    color: white;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+    padding: .5rem;
+    cursor: pointer;
+}
+
+.Loading>h5:hover {
+    background-color: crimson;
+}
+
 .middle {
     box-sizing: border-box;
 }
@@ -103,6 +117,10 @@
 
     .Loading>h3 {
         width: 90%;
+    }
+
+    .Loading>h5 {
+        width: 20%
     }
 
     .DeadLift {
