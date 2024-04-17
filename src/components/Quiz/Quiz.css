@@ -180,8 +180,8 @@
 
     .QuestionText {
         box-sizing: border-box;
-        padding: 2rem;
-        font-size: 1rem;
+        padding: 1rem;
+        font-size: .9rem;
     }
 
     .Answers {

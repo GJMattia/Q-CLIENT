@@ -138,6 +138,10 @@
 
 @media (max-width: 1000px) {
 
+    .Username {
+        font-size: 2.2rem;
+    }
+
     .PersonalInfo {
         width: 95%;
     }
